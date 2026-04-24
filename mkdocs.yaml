@@ -1,0 +1,61 @@
+site_name: 数字泔水
+copyright: '&copy; 2023-2026 Espejo'
+theme:
+  name: material
+  icon:
+    logo: material/fountain-pen-tip
+  language: zh
+  palette: 
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: cyan
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+  features:
+    - content.code.copy
+    - content.code.select
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.superfences
+  - admonition
+  - attr_list
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.magiclink
+  - pymdownx.keys
+  - toc:
+      permalink: true
+plugins:
+  - search:
+      lang: 
+        - en
+        - zh
+      separator: '[\s\-\.()\[\]/\\,，。：:；;]+'
+      pipeline: [trimmer, stopWordFilter]
+  - awesome-pages
+extra:
+  generator: false
+  robots: noindex, nofollow
+  sitemap:
+    filename: null
+extra_javascript:
+  - .oth/js/random_dune_quote.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
