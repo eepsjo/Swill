@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const quotes = [
+        "恐惧是思维杀手",
         "希望会蒙蔽双眼",
         "心怀向往，将使人过于沉溺。此路危机四伏",
         "柳枝顺从风势，方能枝繁叶茂，终有一日会形成抵抗大风的铜墙铁壁",
