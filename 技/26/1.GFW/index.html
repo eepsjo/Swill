@@ -2889,7 +2889,7 @@
 
 
 <h1 id="gfw">GFW<a class="headerlink" href="#gfw" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='26-01-07'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-07T12:00:00+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='26-01-07'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-07T12:00:00+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar.png' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='26-01-07'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-07T12:00:00+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='26-04-26'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-04-27T02:17:14+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar.png' data-email='' /></div></div></div></div></div>
 
 <p>GFW 主要通过以下几种方式来识别和阻断用户访问被封锁的网站：</p>
 <ol>
@@ -2919,8 +2919,7 @@
 <li>基于模拟伪装（鹦鹉）的“魔法”方式（如 Reality）。此方法甚至不需要域名，但由于 Reality 模拟的是完整的 TLS 握手，因此不能套 CDN，也就必须保证所使用的服务器 IP 地址未被封锁。</li>
 <li>基于 udp 的协议（如 Hysteria）。此方法利用 GFW 对 udp 流量干预较少的漏洞。</li>
 </ol>
-<p>等等等等……</p>
-<p>注意到 GFW 只需要全境 SNI 和 IP 白名单，上述所有“魔法”协议都将失效。</p>
+<p>GFW 只需要全境 SNI 和 IP 白名单，上述所有“魔法”协议都将失效。目前有 SNI 白名单的趋势，且上述三种方式都不再有很大成效。</p>
 
 
 
