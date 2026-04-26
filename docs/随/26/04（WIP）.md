@@ -24,8 +24,15 @@ date: 2026-04-01 12:00:00+08:00
 ??? quote "Why was 6 afraid 7"
 
     Because 7 8 9 😭
+
     (It sounds like "seven ate nine".)
+
     Classic joke.
+
     Want a darker version?
+
     Why was 10 scared?
+
     Because it was in the middle of 9/11 💀
+
+^
