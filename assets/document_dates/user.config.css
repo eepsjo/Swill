@@ -44,20 +44,23 @@
 .document-dates-plugin .material-icons[data-icon="doc_authors"]::before {
     content: "group";
 } */
+.document-dates-plugin .material-icons[data-icon="doc_author"],
+.document-dates-plugin .material-icons[data-icon="doc_authors"] {
+    display: none !important;
+}
 
 
 
 /* 3. Author Avatar styles
     e.g. shape, hover scale, grayscale mode
     */
-/* 
-.avatar-wrapper {
-    border-radius: 4px;
+.avatar-wrapper {/*
+    border-radius: 4px;*/
     filter: grayscale(0%);
 }
 .avatar-wrapper:hover {
-    transform: scale(1.08);
-} */
+    transform: scale(1.00);
+}
 
 
 
