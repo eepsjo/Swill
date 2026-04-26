@@ -1489,24 +1489,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    实用命令
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1523,36 +1505,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Windows
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -2921,25 +2873,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Windows
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2956,13 +2889,18 @@
 
 
 <h1 id="_1">实用命令<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='22-12-31'><span class='material-icons' data-icon='doc_created'></span><time datetime='2023-01-01T00:00:00+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='26-02-28'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-03-01T00:00:00+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar.png' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='23-01-01'><span class='material-icons' data-icon='doc_created'></span><time datetime='2023-01-01T12:00:00+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='26-03-01'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-03-01T12:00:00+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar.png' data-email='' /></div></div></div></div></div>
 
-<h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
 <ul>
-<li>更新 Git
+<li>更新 Windows Git
     <code>git update-git-for-windows</code></li>
-<li></li>
+<li>分支重开
+    <code>git checkout --orphan latest_branch &amp;&amp; \
+    git add -A &amp;&amp; \
+    git commit -am "Initial commit" &amp;&amp; \
+    git branch -D main &amp;&amp; \
+    git branch -m main &amp;&amp; \
+    git push -f origin main</code></li>
 </ul>
 
 
