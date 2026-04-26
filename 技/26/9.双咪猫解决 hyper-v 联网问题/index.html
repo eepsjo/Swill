@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://eepsjo.github.io/Swill/%E6%8A%80/26/9.%E5%8F%8C%E5%92%AA%E7%8C%AB%E8%A7%A3%E5%86%B3%20hyper-v%20%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98/">
+      
       
         <link rel="prev" href="../8.%E8%AE%B0%E4%B8%80%E6%AC%A1%E2%80%9C%E5%AE%98%E4%B8%AD%E6%B2%A1%E6%9C%89%20R18%E2%80%9D%E5%BC%95%E5%8F%91%E7%9A%84%E6%83%A8%E6%A1%88/">
       
@@ -48,6 +50,24 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/tippy/material.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/tippy/shift-away.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/tippy/tippy.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/tippy/scale.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/tippy/light.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/tippy/backdrop.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/core/core.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/user.config.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -2813,6 +2833,8 @@
 
 
 <h1 id="hyper-v">双咪猫解决 hyper-v 联网问题<a class="headerlink" href="#hyper-v" title="Permanent link">&para;</a></h1>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='yymmdd'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-04-24T16:03:13+00:00'>yymmdd</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='eepsjo' data-tippy-content data-tippy-raw='<a href="mailto:99065471+eepsjo@users.noreply.github.com">eepsjo</a>'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='99065471+eepsjo@users.noreply.github.com' /></div></div></div></div></div>
+
 <blockquote>
 <p>核心思路：宿主机开启 <code>allow-lan</code>，配置 <code>mixed-port</code> 和代理鉴权；虚拟机 mihomo 全局模式，通过 socks 代理路由到宿主机虚拟网卡（hyper-v 的 defalut-interface，不是 tun）。</p>
 </blockquote>
@@ -2898,6 +2920,9 @@ shell.Run &quot;.\mihomo【的名字】.exe -d .\&quot;, 0
 
 
 
+  
+  
+
 
 
 
@@ -2953,6 +2978,20 @@ shell.Run &quot;.\mihomo【的名字】.exe -d .\&quot;, 0
         <script src="../../../js/random_dune_quote.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../assets/document_dates/tippy/popper.min.js"></script>
+      
+        <script src="../../../assets/document_dates/tippy/tippy.umd.min.js"></script>
+      
+        <script src="../../../assets/document_dates/core/md5.min.js"></script>
+      
+        <script src="../../../assets/document_dates/core/default.config.js"></script>
+      
+        <script src="../../../assets/document_dates/user.config.js"></script>
+      
+        <script src="../../../assets/document_dates/core/utils.js"></script>
+      
+        <script src="../../../assets/document_dates/core/core.js"></script>
       
     
   </body>
