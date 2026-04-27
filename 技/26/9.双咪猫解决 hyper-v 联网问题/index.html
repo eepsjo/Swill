@@ -1043,6 +1043,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../%E6%96%87/26/10.%E5%93%B2%E5%AD%A6%E5%85%89%E8%B0%B1%E5%92%8C%E4%BA%94%E7%A7%8D%E4%BA%8B%E4%BB%B6%E9%80%BB%E8%BE%91%EF%BC%88WIP%EF%BC%89/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    哲学光谱和五种事件逻辑（WIP）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../%E6%96%87/26/2.%E5%9B%BE%E7%81%B5%E6%97%B6%E4%BB%A3/" class="md-nav__link">
         
   
@@ -2995,68 +3023,68 @@
 <li>hyper-v 的虚拟网卡的网关每次宿主机重启都会变，我在网上查到可以用命令改变它的行为让它固定，但是我不想这么做 😭<br><span class="arithmatex">\(\to\)</span> 在虚拟机 mihomo 启动前执行脚本检测当前默认网关（对应宿主机的虚拟网卡的 IP）并写入节点（<em>文章后面有示例喵～(∠・ω&lt; )⌒☆</em></li>
 </ol>
 <h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>宿主机配置（部分）：</p>
-<pre><code class="language-yaml">authentication: [&quot;【用户】:【密码】&quot;]
-mixed-port: 【端口】
-</code></pre>
+<p>宿主机配置（部分）：
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">authentication</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;【用户】:【密码】&quot;</span><span class="p p-Indicator">]</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">mixed-port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">【端口】</span>
+</span></code></pre></div></p>
 <p>虚拟机配置（部分）：</p>
 <blockquote>
 <p>这里把节点直接写到 config 里面了；同时这个配置有分流，先处理了一遍需要拒绝的，免得流量进入宿主机。不过感觉没啥必要。</p>
 </blockquote>
-<pre><code class="language-yaml">tun:
-  enable: true
-  device: utun
-  stack: mixed
-  dns-hijack: [any:53, tcp://any:53]
-  auto-route: true
-  strict-route: true
-  auto-detect-interface: true
-  disable-icmp-forwarding: true
-
-dns:
-  enable: true
-  ipv6: false
-  prefer-h3: false
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-
-proxies:
-  - name: 【代理的名字】
-    type: socks5
-    server: 【hyper-v 网关】# 下面写了怎么动态获取
-    port: 【端口】# 这里是上面宿主机配置里的。下同
-    username: 【用户】
-    password: 【密码】
-
-proxy-groups:
-  - {name: PROXY, type: select, proxies: [【代理的名字】]}
-  - {name: GLOBAL, type: select, proxies: [PROXY], hidden: true}
-
-rule-providers:
-  r: {type: http, behavior: classical, format: text, url: https://raw.githubusercontent.com/eepsjo/0/refs/heads/0/r}
-  R: {type: http, behavior: domain, format: yaml, url: https://anti-ad.net/clash.yaml}
-
-rules:
-  - AND,((NETWORK,UDP),(DST-PORT,443)),REJECT
-  - RULE-SET,r,REJECT
-  - RULE-SET,R,REJECT
-  - MATCH,PROXY
-</code></pre>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">tun</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">enable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">device</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">utun</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">stack</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mixed</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">dns-hijack</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">any</span><span class="p p-Indicator">:</span><span class="nv">53</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">tcp</span><span class="p p-Indicator">:</span><span class="nv">//any</span><span class="p p-Indicator">:</span><span class="nv">53</span><span class="p p-Indicator">]</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">auto-route</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">strict-route</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nt">auto-detect-interface</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">disable-icmp-forwarding</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="nt">dns</span><span class="p">:</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="nt">enable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="nt">ipv6</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="nt">prefer-h3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">  </span><span class="nt">enhanced-mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fake-ip</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">  </span><span class="nt">fake-ip-range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">198.18.0.1/16</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="nt">proxies</span><span class="p">:</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">【代理的名字】</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">socks5</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">【hyper-v 网关】# 下面写了怎么动态获取</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">【端口】# 这里是上面宿主机配置里的。下同</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">    </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">【用户】</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">【密码】</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="nt">proxy-groups</span><span class="p">:</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="nv">PROXY</span><span class="p p-Indicator">,</span><span class="nt"> type</span><span class="p">:</span><span class="w"> </span><span class="nv">select</span><span class="p p-Indicator">,</span><span class="nt"> proxies</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">【代理的名字】</span><span class="p p-Indicator">]}</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="nv">GLOBAL</span><span class="p p-Indicator">,</span><span class="nt"> type</span><span class="p">:</span><span class="w"> </span><span class="nv">select</span><span class="p p-Indicator">,</span><span class="nt"> proxies</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">PROXY</span><span class="p p-Indicator">],</span><span class="nt"> hidden</span><span class="p">:</span><span class="w"> </span><span class="nv">true</span><span class="p p-Indicator">}</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="nt">rule-providers</span><span class="p">:</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">  </span><span class="nt">r</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="nv">http</span><span class="p p-Indicator">,</span><span class="nt"> behavior</span><span class="p">:</span><span class="w"> </span><span class="nv">classical</span><span class="p p-Indicator">,</span><span class="nt"> format</span><span class="p">:</span><span class="w"> </span><span class="nv">text</span><span class="p p-Indicator">,</span><span class="nt"> url</span><span class="p">:</span><span class="w"> </span><span class="nv">https</span><span class="p p-Indicator">:</span><span class="nv">//raw.githubusercontent.com/eepsjo/0/refs/heads/0/r</span><span class="p p-Indicator">}</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">  </span><span class="nt">R</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="nv">http</span><span class="p p-Indicator">,</span><span class="nt"> behavior</span><span class="p">:</span><span class="w"> </span><span class="nv">domain</span><span class="p p-Indicator">,</span><span class="nt"> format</span><span class="p">:</span><span class="w"> </span><span class="nv">yaml</span><span class="p p-Indicator">,</span><span class="nt"> url</span><span class="p">:</span><span class="w"> </span><span class="nv">https</span><span class="p p-Indicator">:</span><span class="nv">//anti-ad.net/clash.yaml</span><span class="p p-Indicator">}</span>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="nt">rules</span><span class="p">:</span>
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AND,((NETWORK,UDP),(DST-PORT,443)),REJECT</span>
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RULE-SET,r,REJECT</span>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RULE-SET,R,REJECT</span>
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MATCH,PROXY</span>
+</span></code></pre></div>
 <p>用于动态获取网关 IP 并写入同目录下 config 的 PowerShell 脚本：</p>
 <blockquote>
 <p>必须在 mihomo 运行前/未运行时才能获取真实正确的 IP。</p>
 </blockquote>
-<pre><code class="language-powershell">$gateway = (Get-NetRoute -DestinationPrefix 0.0.0.0/0).NextHop | Select-Object -First 1
-(Get-Content config.yaml) -replace 'server: .*', &quot;server: $gateway&quot; | Set-Content config.yaml
-</code></pre>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">$gateway</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-NetRoute</span> <span class="n">-DestinationPrefix</span> <span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">/</span><span class="n">0</span><span class="p">).</span><span class="n">NextHop</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-First</span> <span class="n">1</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">(</span><span class="nb">Get-Content</span> <span class="n">config</span><span class="p">.</span><span class="n">yaml</span><span class="p">)</span> <span class="o">-replace</span> <span class="s1">&#39;server: .*&#39;</span><span class="p">,</span> <span class="s2">&quot;server: $gateway&quot;</span> <span class="p">|</span> <span class="nb">Set-Content</span> <span class="n">config</span><span class="p">.</span><span class="n">yaml</span>
+</span></code></pre></div>
 <p>启动脚本：</p>
 <blockquote>
 <p>只是多了一行启动 ps1 然后判断<strong>真假？！</strong> 的逻辑。vbs 必须用任务计划程序才能以管理员启动喔。</p>
 </blockquote>
-<pre><code class="language-vbs">Set shell = CreateObject(&quot;WScript.Shell&quot;)
-shell.Run &quot;powershell.exe -ExecutionPolicy Bypass -File .\server.ps1&quot;, 0, True
-shell.Run &quot;.\mihomo【的名字】.exe -d .\&quot;, 0
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Set shell = CreateObject(&quot;WScript.Shell&quot;)
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>shell.Run &quot;powershell.exe -ExecutionPolicy Bypass -File .\server.ps1&quot;, 0, True
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>shell.Run &quot;.\mihomo【的名字】.exe -d .\&quot;, 0
+</span></code></pre></div>
 
 
 
