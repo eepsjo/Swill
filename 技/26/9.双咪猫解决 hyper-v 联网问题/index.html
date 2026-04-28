@@ -7,6 +7,8 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
+        <meta name="author" content="eepsjo">
+      
       
         <link rel="canonical" href="https://eepsjo.github.io/Swill/%E6%8A%80/26/9.%E5%8F%8C%E5%92%AA%E7%8C%AB%E8%A7%A3%E5%86%B3%20hyper-v%20%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98/">
       
@@ -55,15 +57,15 @@
     
       <link rel="stylesheet" href="../../../assets/document_dates/tippy/material.css">
     
+      <link rel="stylesheet" href="../../../assets/document_dates/tippy/shift-away.css">
+    
       <link rel="stylesheet" href="../../../assets/document_dates/tippy/tippy.css">
     
       <link rel="stylesheet" href="../../../assets/document_dates/tippy/scale.css">
     
-      <link rel="stylesheet" href="../../../assets/document_dates/tippy/backdrop.css">
-    
       <link rel="stylesheet" href="../../../assets/document_dates/tippy/light.css">
     
-      <link rel="stylesheet" href="../../../assets/document_dates/tippy/shift-away.css">
+      <link rel="stylesheet" href="../../../assets/document_dates/tippy/backdrop.css">
     
       <link rel="stylesheet" href="../../../assets/document_dates/core/core.css">
     
@@ -3084,7 +3086,7 @@
 
 
 <h1 id="hyper-v">双咪猫解决 hyper-v 联网问题<a class="headerlink" href="#hyper-v" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='26-04-22'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-04-22T12:00:00+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='26-04-22'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-04-22T12:00:00+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260422'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-04-22T12:00:00+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260422'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-04-22T12:00:00+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
 
 <blockquote>
 <p>核心思路：宿主机开启 <code>allow-lan</code>，配置 <code>mixed-port</code> 和代理鉴权；虚拟机 mihomo 全局模式，通过 socks 代理路由到宿主机虚拟网卡（hyper-v 的 defalut-interface，不是 tun）。</p>
