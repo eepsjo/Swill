@@ -1,7 +1,15 @@
 authors:
   stu:
     name: Espejo
-    avatar: assets/avatar.png
+    avatar: assets/avatar/Espejo.png
   eepsjo:
     name: Espejo
-    avatar: assets/avatar.png
+    avatar: assets/avatar/Espejo.png
+  采樵野人:
+    name: 采樵野人
+    avatar: assets/avatar/采樵野人.jpg
+    url: https://space.bilibili.com/3546618582272968
+  Victor David:
+    name: Victor David
+    avatar: docs/assets/avatar/Victor_David.jpg
+    url: https://reedsy.com/creative-writing-prompts/author/victor-david/
