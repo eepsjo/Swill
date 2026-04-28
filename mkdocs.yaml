@@ -1,4 +1,5 @@
 site_name: 数字泔水
+site_author: eepsjo
 site_url: https://eepsjo.github.io/Swill/
 copyright: '&copy; 2023-2026 Espejo'
 
@@ -59,7 +60,10 @@ plugins:
   - document-dates:
       position: top
       type: timeago
-      date_format: '%y-%m-%d'
+      date_format: '%y%m%d'
+      exclude:
+        - index.md
+      
 
 extra:
   generator: false

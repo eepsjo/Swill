@@ -54,8 +54,8 @@
 /* 3. Author Avatar styles
     e.g. shape, hover scale, grayscale mode
     */
-.avatar-wrapper {/*
-    border-radius: 4px;*/
+.avatar-wrapper {
+    border-radius: 0px;
     filter: grayscale(0%);
 }
 .avatar-wrapper:hover {
@@ -81,7 +81,6 @@
 .tippy-box[data-theme~='sorrel'] > .tippy-arrow::before {
     color: #F7E6E2;
 }
-
 .tippy-box[data-theme~='sublime'] {
     background-color: #474747;
     color: #F19D38;
@@ -89,3 +88,13 @@
 .tippy-box[data-theme~='sublime'] > .tippy-arrow::before {
     color: #474747;
 } */
+.tippy-box {
+    border-radius: 0 !important;
+}
+.tippy-box[data-theme~='dark'] {
+    background-color: #333333;
+    color: #f8f8f8;
+}
+.tippy-box[data-theme~='sublime'] > .tippy-arrow::before {
+    color: #333333;
+}
