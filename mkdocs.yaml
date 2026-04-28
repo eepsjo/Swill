@@ -60,10 +60,7 @@ plugins:
   - document-dates:
       position: top
       type: timeago
-      date_format: '%y%m%d'
-      exclude:
-        - index.md
-      
+      date_format: '%y%m%d'    
 
 extra:
   generator: false
