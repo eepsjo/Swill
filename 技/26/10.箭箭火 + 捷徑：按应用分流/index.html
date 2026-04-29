@@ -3136,30 +3136,30 @@
 
 
 <h1 id="_1">箭箭火 + 捷徑：按应用分流<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260429'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-04-29T23:55:00+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260429'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-04-30T01:05:30+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260429'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-04-29T23:55:00+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260429'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-04-30T01:13:03+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
 
 <details class="quote">
 <summary>不是有域名/IP 的网络分流了吗，应用分流是何意味了？</summary>
-<p>“已知许多国内无良 App 会探测你的海外出口 IP，……”<a href="https://xtls.github.io/document/level-1/routing-with-dns.html#%E5%86%99%E5%9C%A8%E5%90%8E%E9%9D%A2">原文链接</a></p>
+<p>“已知许多国内无良 App 会探测你的海外出口 IP，……” <a href="https://xtls.github.io/document/level-1/routing-with-dns.html#%E5%86%99%E5%9C%A8%E5%90%8E%E9%9D%A2">原文链接</a></p>
 </details>
 <p>背景：iOS 系统限制<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>，箭箭火不支持按应用分流<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>。</p>
-<p>目标：将手机上的 App 简单分成国内和国外的，国内的 App 绝不能出现代理流量，App 的则可以使用代理。需要在切换两种 App 时实现网络环境无感切换。</p>
+<p>目标：（将手机上的 App 简单分成国内和国外的，）国内的 App 绝不能出现代理流量，国外的则可以使用代理。需要在切换两种 App 时实现网络环境无感切换。</p>
 <p>思路：利用捷徑 App 的“自动化”功能在打开/关闭特定 App 时改变箭箭火的网络行为。</p>
 <p>核心思想：当一个应用被关闭时它不需要也不应该有任何的流量，甚至是通知接受（后台刷新<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>）流量（因为 iOS 的通知是通过 APNs<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup> 统一发放，而非应用自己获取的）。</p>
 <h2 id="_2">基础版<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>打开国内 App 时关闭箭箭火，关闭国内 App 时打开箭箭火；</p>
 <p>或者打开国外 App 时打开箭箭火，关闭国外 App 时关闭箭箭火；</p>
 <p>或者打开/关闭国内 App 时关闭/打开箭箭火，打开/关闭国外 App 时打开/关闭箭箭火……</p>
-<p>总之就是箭箭火不和国内 App 同时运行，要和国外 App 同时运行。如果你这样搞的话你的分流规则甚至不需要很复杂的网络分流，一个全局代理走天下，这样做就是用浏览器这种复杂的网络环境时不方便。</p>
+<p>总之就是箭箭火不和国内 App 同时运行，要和国外 App 同时运行。如果你这样搞的话你的分流规则甚至不需要很复杂的网络分流，一个全局代理走天下，就是用浏览器这种复杂的网络环境时不方便。</p>
 <p>优点：安心です</p>
-<p>缺点：切换的时候卡得屄爆，而且无法享受箭箭火分流的去广告和模块。</p>
+<p>缺点：切换的时候卡得屄爆，而且无法享受箭箭火的分流去广告和模块。</p>
 <h2 id="_3">进阶版<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>目标：在基础版上解决应用无法去广告/使用模块、切换时卡顿的问题。</p>
-<p>思路：利用捷徑 App 和箭箭火的 <a href="https://lowertop.github.io/Shadowrocket/#url-schemes">URL-Schemes</a><sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup> 在打开/关闭特定 App 时改变箭箭火的<strong>全局路由</strong><sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>。</p>
+<p>思路：利用捷徑 App 和箭箭火的 <a href="https://lowertop.github.io/Shadowrocket/#url-schemes">URL-Schemes</a><sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup> 在打开/关闭特定 App 时改变箭箭火<strong>全局路由</strong><sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>。</p>
 <blockquote>
-<p>箭箭火的全局路由有四种，配置、代理、直连和场景，其中场景在不写任何“场景”时和配置的行为一样，但可以携带不同的配置。</p>
+<p>箭箭火的全局路由有四种，配置、代理、直连和场景，其中场景在不写任何“场景”时和配置的行为一样，但可以携带和“配置”路由不同的配置。</p>
 </blockquote>
-<p>首先准备一份<a href="https://github.com/eepsjo/s/blob/c/r">仅屏蔽广告，兜底直连</a>的配置文件和一份<a href="https://github.com/eepsjo/s/blob/c/d">正常分流</a>的配置文件<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup>，然后在“场景”中指定使用“仅屏蔽广告，兜底直连”的配置文件。服务器节点无所谓，因为这个配置不存在任何代理流量。路由使用“配置”；在箭箭火主界面的第二面“配置”中选中“正常分流”配置文件。</p>
+<p>首先准备一份<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/c/r">仅屏蔽广告，兜底直连</a>的配置文件和一份<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/c/d">正常分流</a>的配置文件<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup>，然后在“场景”中指定使用“仅屏蔽广告，兜底直连”的配置文件。服务器节点无所谓，因为这个配置不存在任何代理流量。路由使用“配置”；在箭箭火主界面的第二面“配置”中选中“正常分流”配置文件。</p>
 <blockquote>
 <p>嘛，如果你本来就需要用场景的话就把上面的两个配置文件互换位置就行，我是因为懒得进场景换代理使用的配置（我需要经常测试所以我有一堆配置）才在场景里放“仅屏蔽广告，兜底直连”的。</p>
 </blockquote>
