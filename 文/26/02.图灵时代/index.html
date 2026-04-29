@@ -1,0 +1,3895 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="eepsjo">
+      
+      
+        <link rel="canonical" href="https://eepsjo.github.io/Swill/%E6%96%87/26/02.%E5%9B%BE%E7%81%B5%E6%97%B6%E4%BB%A3/">
+      
+      
+        <link rel="prev" href="../01.%E8%86%80%E8%83%B1/">
+      
+      
+        <link rel="next" href="../03.%E5%89%8D%E5%9B%BE%E7%81%B5%E6%97%B6%E4%BB%A3/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>图灵时代 - 数字泔水</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/tippy/material.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/tippy/shift-away.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/tippy/tippy.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/tippy/scale.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/tippy/light.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/tippy/backdrop.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/core/core.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/user.config.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="数字泔水" class="md-header__button md-logo" aria-label="数字泔水" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            数字泔水
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              图灵时代
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="cyan"  aria-label=""  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label=""  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../001.%E5%9B%A0%E6%9E%9C%E6%A8%A1%E5%9E%8B/" class="md-tabs__link">
+          
+  
+  
+  文
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E6%8A%80/001.%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98%E7%9A%84%E7%BD%91%E9%A1%B5%E6%94%B6%E8%97%8F%E5%A4%B9/" class="md-tabs__link">
+          
+  
+  
+  技
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E9%9A%8F/25/TOP3s%20ART/" class="md-tabs__link">
+          
+  
+  
+  随
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E3%80%8A%E5%99%A8%E5%9B%9A%E5%BF%97%E3%80%8B/%E5%BC%81%E8%A8%80/" class="md-tabs__link">
+          
+  
+  
+  《器囚志》
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E6%9D%82/01.B%20%E7%AB%99%E9%BB%91%E5%90%8D%E5%8D%95/" class="md-tabs__link">
+          
+  
+  
+  杂
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E5%BD%95/0001.%E6%98%9F%E5%85%89/" class="md-tabs__link">
+          
+  
+  
+  录
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="数字泔水" class="md-nav__button md-logo" aria-label="数字泔水" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    数字泔水
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    文
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../001.%E5%9B%A0%E6%9E%9C%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    因果模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../002.%E7%91%9E%E5%A3%AB%E4%B8%9C%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    瑞士东模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003.%E2%80%9C%E5%BC%BA%E5%8A%9B-%E6%9C%8D%E4%BB%8E%E2%80%9D%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    “强力-服从”模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../004.%E5%A4%A7%E7%A6%BB%E6%95%A3%E8%AE%A1%E5%88%92%EF%BC%88WIP%EF%BC%89/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    大离散计划（WIP）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../005.%E5%93%B2%E5%AD%A6%E5%85%89%E8%B0%B1%E5%92%8C%E4%BA%94%E7%A7%8D%E4%BA%8B%E4%BB%B6%E9%80%BB%E8%BE%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    哲学光谱和五种事件逻辑
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    24
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24/1.%E6%84%8F%E5%BF%97%E8%99%9A%E6%8B%9F%E6%9C%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    意志虚拟机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24/2.%E7%A4%BE%E7%BE%A4%E4%B8%BB%E4%B9%89%E5%92%8C%E8%87%AA%E7%94%B1%E4%B8%BB%E4%B9%89/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    社群主义和自由主义
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24/3.%E5%93%B2%E5%AD%A6%E7%9A%84%E6%83%85%E7%BB%AA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    哲学的情绪
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../24/4.%E8%A7%82%20FG-S16E12%20%E6%9C%89%E6%84%9F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    观 FG-S16E12 有感
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_7" id="__nav_1_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    25
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../25/1.%E9%80%89%E6%8B%A9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    选择
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../25/2.%E8%A7%82%E5%A7%9C%E8%90%8D%E4%BA%8B%E4%BB%B6%E6%9C%89%E6%84%9F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    观姜萍事件有感
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../25/3.%E4%BB%8E%E6%80%A7%E6%9D%83%E5%AF%B9%E7%AB%8B%E7%9C%8B%E7%BE%A4%E4%BD%93%E8%BF%9B%E5%8C%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    从性权对立看群体进化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../25/4.%E8%B1%A1%E7%89%99%E5%A1%94%E5%A4%96%E7%9A%84%E7%8A%AC%E5%90%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    象牙塔外的犬吠
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1_8" id="__nav_1_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    26
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01.%E8%86%80%E8%83%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    膀胱
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    图灵时代
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    图灵时代
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        启、后信息时代
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、欲望机器对弗洛伊德式心理学的解构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、欲望机器对弗洛伊德式心理学的解构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.欲望的生产性与“匮乏”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.无器官身体
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、虚假自我连续性与记忆缝合机制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、虚假自我连续性与记忆缝合机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.记忆的不连续性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.控制的入口
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、政治视角下的巴别塔：统一语言与对齐控制的隐喻
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、政治视角下的巴别塔：统一语言与对齐控制的隐喻">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.创世记：失败的循环来源于权力的集中
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.算法利维坦
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、科学神教与计算霸权
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、科学神教与计算霸权">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.对齐算法的教义化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.社会图灵测试与主体性的异化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、生产力瓶颈与“第二中世纪”：技术停滞时代的加速主义
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、生产力瓶颈与“第二中世纪”：技术停滞时代的加速主义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.图灵陷阱
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.奥杜威理论与能源约束下的分层
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、绝对对齐、可读性与算法闭环
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、绝对对齐、可读性与算法闭环">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.绝对对齐：道德与认知的窄化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.可读性：摧毁地方性知识
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.算法闭环：预测即统治
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、不透明性、解领土化与个体复归
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="七、不透明性、解领土化与个体复归">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.不透明权：对抗的堡垒
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.幽灵学与失落的未来
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.解领土化与分裂分析
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、对齐熵增与幽灵熵减的博弈
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        结、图灵时代
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03.%E5%89%8D%E5%9B%BE%E7%81%B5%E6%97%B6%E4%BB%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前图灵时代
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04.%E7%AC%AC%E4%BA%8C%E9%80%8F%E8%A7%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二透视
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05.NOSTALGIA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NOSTALGIA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06.%E4%BB%8E%E6%9D%A5%E5%A6%82%E6%AD%A4%EF%BC%8C%E4%BE%BF%E5%AF%B9%E4%B9%88%EF%BC%9F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    从来如此，便对么？
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07.Agent%20%E5%8D%B1%E6%9C%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent 危机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08.%E8%A7%82%E2%80%9C%E6%B8%85%E9%9B%A8%E6%AF%81%E5%8F%B7%E2%80%9D%E4%BA%8B%E4%BB%B6%E6%9C%89%E6%84%9F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    观“清雨毁号”事件有感
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09.%E6%B2%A1%E6%9C%89%E5%90%8E%E7%8E%B0%E4%BB%A3%E7%9A%84%E5%91%BD%EF%BC%8C%E5%BE%97%E4%BA%86%E5%90%8E%E7%8E%B0%E4%BB%A3%E7%9A%84%E7%97%85/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    没有后现代的命，得了后现代的病
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    技
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    技
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%8A%80/001.%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98%E7%9A%84%E7%BD%91%E9%A1%B5%E6%94%B6%E8%97%8F%E5%A4%B9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    解决问题的网页收藏夹
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%8A%80/002.%E5%AE%9E%E7%94%A8%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    实用命令
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%8A%80/003.%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    实用工具
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    26
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%8A%80/26/01.GFW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GFW
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%8A%80/26/02.fake-ip%20%E4%B8%8E%20redir-host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    fake-ip 与 redir-host
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%8A%80/26/03.CN2%20GIA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CN2 GIA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%8A%80/26/04.%E6%B5%85%E8%B0%88%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    浅谈系统更新
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%8A%80/26/05.%E6%B5%85%E8%B0%88%E4%BB%A3%E7%90%86%E6%B3%84%E9%9C%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    浅谈代理泄露
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%8A%80/26/06.%E4%BB%A3%E7%90%86%E4%B8%AD%E7%9A%84%20ECH/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    代理中的 ECH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%8A%80/26/07.%E8%AE%B0%E4%B8%80%E6%AC%A1%E2%80%9C%E5%AE%98%E4%B8%AD%E6%B2%A1%E6%9C%89%20R18%E2%80%9D%E5%BC%95%E5%8F%91%E7%9A%84%E6%83%A8%E6%A1%88/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    记一次“官中没有 R18”引发的惨案
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%8A%80/26/08.%E6%B5%85%E8%B0%88%E7%BA%A6%E6%9D%9F%E5%B7%A5%E7%A8%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    浅谈约束工程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%8A%80/26/09.%E5%8F%8C%E5%92%AA%E7%8C%AB%E8%A7%A3%E5%86%B3%20hyper-v%20%E8%81%94%E7%BD%91%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    双咪猫解决 hyper-v 联网问题
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%8A%80/26/10.%E7%AE%AD%E7%AE%AD%E7%81%AB%20%2B%20%E6%8D%B7%E5%BE%91%EF%BC%9A%E6%8C%89%E5%BA%94%E7%94%A8%E5%88%86%E6%B5%81/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    箭箭火 + 捷徑：按应用分流
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    已过时
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    已过时
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%8A%80/%E5%B7%B2%E8%BF%87%E6%97%B6/1.Windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%8A%80/%E5%B7%B2%E8%BF%87%E6%97%B6/2.Linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%8A%80/%E5%B7%B2%E8%BF%87%E6%97%B6/3.Minecraft/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Minecraft
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    随
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    随
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    25
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F/25/TOP3s%20ART/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TOP3s ART
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    26
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F/26/03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F/26/04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F/26/TOP3s%20ART%EF%BC%88WIP%EF%BC%89/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TOP3s ART（WIP）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    《器囚志》
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    《器囚志》
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E3%80%8A%E5%99%A8%E5%9B%9A%E5%BF%97%E3%80%8B/%E5%BC%81%E8%A8%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    弁言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    元
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    元
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E3%80%8A%E5%99%A8%E5%9B%9A%E5%BF%97%E3%80%8B/%E5%85%83/01.%E5%95%9E%E7%BC%BD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    啞缽
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E3%80%8A%E5%99%A8%E5%9B%9A%E5%BF%97%E3%80%8B/%E5%85%83/02.%E8%81%B2%E7%89%A2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    聲牢
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E3%80%8A%E5%99%A8%E5%9B%9A%E5%BF%97%E3%80%8B/%E5%85%83/03.%E8%9F%AC%E7%B1%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    蟬籠
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E3%80%8A%E5%99%A8%E5%9B%9A%E5%BF%97%E3%80%8B/%E5%85%83/04.%E8%B2%AA%E5%8B%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    貪勺
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    又
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    又
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E3%80%8A%E5%99%A8%E5%9B%9A%E5%BF%97%E3%80%8B/%E5%8F%88/01.%E9%9B%A8%E5%A4%9C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    雨夜
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E3%80%8A%E5%99%A8%E5%9B%9A%E5%BF%97%E3%80%8B/%E5%8F%88/02.%E6%B0%B8%E7%94%9F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    永生
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    杂
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    杂
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%9D%82/01.B%20%E7%AB%99%E9%BB%91%E5%90%8D%E5%8D%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    B 站黑名单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%9D%82/02.%E6%88%B7%E5%9C%A3%E9%81%97%E9%A3%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    户圣遗风
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    录
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    录
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%BD%95/0001.%E6%98%9F%E5%85%89/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    星光
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%BD%95/0002.%E8%80%81%E7%8E%8B%E6%AD%BB%E4%BA%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    老王死了
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%BD%95/0003.%E5%90%8C%E5%B9%B4%E5%90%8C%E6%9C%88%E5%90%8C%E6%97%A5%E7%94%9F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    同年同月同日生
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%BD%95/0004.%E6%A0%91%E5%8F%B6%E7%B3%95%E5%9B%A2%E9%93%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    树叶糕团铺
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%BD%95/0005.Eleven%20Years%20of%20Hope/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eleven Years of Hope
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%BD%95/0006.%E4%BD%90%E6%B2%BB%E4%BA%9A%E5%BC%95%E5%AF%BC%E7%9F%B3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    佐治亚引导石
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    《世界纷乱的根源》
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    《世界纷乱的根源》
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%BD%95/%E3%80%8A%E4%B8%96%E7%95%8C%E7%BA%B7%E4%B9%B1%E7%9A%84%E6%A0%B9%E6%BA%90%E3%80%8B/001.%E8%B1%A1%E3%80%81%E5%BE%81%E3%80%81%E5%90%8D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    象、征、名
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        启、后信息时代
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、欲望机器对弗洛伊德式心理学的解构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、欲望机器对弗洛伊德式心理学的解构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.欲望的生产性与“匮乏”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.无器官身体
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、虚假自我连续性与记忆缝合机制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、虚假自我连续性与记忆缝合机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.记忆的不连续性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.控制的入口
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、政治视角下的巴别塔：统一语言与对齐控制的隐喻
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、政治视角下的巴别塔：统一语言与对齐控制的隐喻">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.创世记：失败的循环来源于权力的集中
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.算法利维坦
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、科学神教与计算霸权
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、科学神教与计算霸权">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.对齐算法的教义化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.社会图灵测试与主体性的异化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、生产力瓶颈与“第二中世纪”：技术停滞时代的加速主义
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、生产力瓶颈与“第二中世纪”：技术停滞时代的加速主义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.图灵陷阱
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.奥杜威理论与能源约束下的分层
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、绝对对齐、可读性与算法闭环
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、绝对对齐、可读性与算法闭环">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.绝对对齐：道德与认知的窄化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.可读性：摧毁地方性知识
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.算法闭环：预测即统治
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、不透明性、解领土化与个体复归
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="七、不透明性、解领土化与个体复归">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.不透明权：对抗的堡垒
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.幽灵学与失落的未来
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.解领土化与分裂分析
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、对齐熵增与幽灵熵减的博弈
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        结、图灵时代
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">图灵时代<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260112'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-12T12:00:00+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260208'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-02-08T12:00:00+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
+
+<h2 id="_2">启、后信息时代<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>人类文明正处于前所未有的临界点。随着 LLM、生物工程等科技的进步，关于“人”的定义正在经历一场范式级别的剧变。这种剧变不仅体现在物质层面，更体现在主观经验、社会治理以及形而上学建构的全面重组。</p>
+<p>笔者旨在通过构建“图灵主义”（Turingism）与“幽灵主义”（Ghostism）这一对立统一的理论框架，探讨当代技术文明的深层逻辑。</p>
+<p>图灵主义代表了一种追求绝对对齐、全盘可读与算法闭环的治理意志；而幽灵主义则象征着在霸权缝隙中涌动的个体性反抗、自由与不透明性。</p>
+<p>这场理论博弈的背景，是生产力边际效应递减引发的“第二中世纪”预警：技术创新不再直接转化为普遍的社会福祉，而是沦为强化监控的工具时，文明的停滞便显现出某种中世纪式的闭塞特征。在此背景下，德勒兹与瓜塔里的欲望机器理论为我们提供了拆解传统心理学中轴的利刃，揭示了“自我”作为一种虚假连续性神话的本质；同时，通过对《圣经》创世记与巴别塔隐喻的重新阐释，我们可以发现科学神学如何与现代政治权力合流，并试图建立一个全知的算法利维坦。</p>
+<p>笔者将深入剖析两种思想流派的碰撞，为理解后信息时代的主体性命运提供一份详尽的地图。</p>
+<h2 id="_3">一、欲望机器对弗洛伊德式心理学的解构<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="1">1.欲望的生产性与“匮乏”<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>在传统心理学范式下（尤其是以弗洛伊德和拉康为代表的精神分析流派），欲望被界定为一种基于“匮乏”（Lack）的心理代偿。这种观点认为，主体的潜意识是一个充满象征性冲突的剧场，欲望的源头在于对某个永远缺失的原始对象（如母体或大他者）的追寻。</p>
+<p>然而，德勒兹与瓜塔里在《反俄狄浦斯》中提出了革命性的“欲望机器”概念，主张欲望不是对缺失的反映，而是一种积极的、生产性的过程 。</p>
+<p>欲望机器（Desiring-machines）并不存在于某种超越性的心理空间，而是直接与社会、经济、工业生产交织在一起 。对于物质精神病学而言，潜意识不是一个储存秘密的黑盒，而是一个由无数微型机器组成的动态网络，这些机器通过不断的连接（Coupling）、切断（Interrupting）和流动（Flows）来创造现实本身 。</p>
+<p>这种视角的转变将个体从“俄狄浦斯三角”（父-母-子）的家庭桎梏中解放出来，揭示了欲望如何在宏观的社会机器与微观的分子机器之间进行着无中介的合流 。</p>
+<h3 id="2">2.无器官身体<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>在欲望机器的运作中，“无器官身体”（Body without Organs, BwO）扮演着至关重要的角色。它并非指生物意义上器官的缺失，而是指一种排除了组织化、科层化和有机统合的潜能平面 。</p>
+<p>对于德勒兹而言，传统心理学所崇尚的“自我”（Ego）实际上是无器官身体上的一种记录残留，是一个在欲望流动中被暂时固化的“幻象” 。这种对主体的解构为理解“图灵主义”提供了关键切入点。如果自我只是欲望生产过程中的随机副产品，那么通过高级算法对欲望流的重新编码，便可以实现对主体的根本性重塑。当代社交媒体的算法推荐、预测性建模，本质上都是在分子层面对欲望机器进行捕获，将其重新领土化到资本循环的逻辑中。</p>
+<p>幽灵主义则主张通过追求“离散”的状态——即拒绝被统合成一个稳定的、可预测的消费/治理主体——来实现对这种捕获的反抗 。</p>
+<h2 id="_4">二、虚假自我连续性与记忆缝合机制<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">1.记忆的不连续性<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p>图灵主义统治的技术基础之一是对人类行为的预测性对齐。然而，这种对齐的前提是假设个体拥有一个连续、稳定的自我。</p>
+<p>哲学家约翰·洛克曾提出记忆是确保身份跨时间连续的核心，但这一神话在当代神经科学与现象学的双重审视下正在瓦解。研究表明，人类的感知经验在本质上是“碎片化”且“离散”的，意识呈现为一系列跳跃的瞬间，而非平滑的河流。大脑作为一种“预期机器”，通过一种被称为“包含性图像”（Inclusive Image）或“自我副本”的机制，将这些散乱的瞬间缝合成一个连贯的自传式叙事。这种缝合本质上是一种虚构。</p>
+<p>记忆并非对过去的真实提取，而是在当下语境中对过去进行的重构和改写。正如亨利·柏格森所指出的，记忆既是自动化的习惯（Memory-custom），也是对过去的重新辨识（Memory-remembering），而这种辨识往往服务于当下的行动需求（欲望）。</p>
+<h3 id="2_1">2.控制的入口<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p>这种“虚假自我连续性”揭示了人类主体的脆弱性。大语言模型（LLM）的人格生成技术正是利用了这种脆弱性。通过对大规模社交媒体数据和心理测量指标的拟合，系统可以生成具有高度一致性的“虚拟人格”，并以此模拟真实人类的社会互动。当算法能够模拟并预设一个个体的连续性时，它实际上接管了主体的叙事权。</p>
+<p>幽灵主义在此背景下浮现，它承认身份的“光谱式”本质（Spectral subject）。这种主体不再追求坚固的内核，而是接受自己作为“生成中的装配体”（Assemblage-in-becoming），在欲望生产的流动中保持灵活的、非实质性的存在。通过拒绝被算法“缝合”成一个一成不变的画像，幽灵主义主体保留了逃逸的可能性。</p>
+<h2 id="_5">三、政治视角下的巴别塔：统一语言与对齐控制的隐喻<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="1_2">1.创世记：失败的循环来源于权力的集中<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<p>《圣经》创世记1-11构成了人类文明的一个基础性隐喻：一个关于创造、堕落、惩罚与分散的循环。从伊甸园的逐出到大洪水，人类始终在追求某种超越自身限制的“神性地位”。而巴别塔（The Tower of Babel）故事作为这一叙事的顶点，集中展现了人类追求绝对统一、共享单一文化与语言的冲动。</p>
+<p>巴别塔不仅是一座建筑，更是一项关于“行政可读性”（Administrative Legibility）的工程。詹姆斯·斯科特在《视之如国家》中精辟地指出，现代国家（和当代大型科技公司）倾向于通过简化和标准化复杂的局部社会安排，来强制推行一种从顶部俯瞰的“透明性” 。这种对单一语言（对齐算法）的狂热，旨在消除一切可能导致摩擦的异质性。</p>
+<h3 id="2_2">2.算法利维坦<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<p>在古代政治神学中，上帝的眼睛被视为权力的原型——一个能够看穿一切灵魂的霸权视角 。</p>
+<p>图灵主义继承了这一神学遗产，并将其转化为“算法利维坦”。通过大模型对全球知识和情感的统摄，它试图建立一个现代的巴别塔：在这个塔内，所有的人类意图都是可计算的，所有的欲望都是被对齐的 。</p>
+<p>巴别塔叙事的反转——上帝通过混乱语言导致人群分散——在幽灵主义看来，并非惩罚，而是一种救赎性的“解领土化”。语言的多样性和局部的“不可理解性”保护了人类免于陷入大一统的极权死寂 。正如格里桑所主张的，这种“分散”作为一种防御机制，确保了文明在面临系统性崩溃时仍保有残留的活力 。</p>
+<h2 id="_6">四、科学神教与计算霸权<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="1_3">1.对齐算法的教义化<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
+<p>当代的AI对齐技术，特别是通过人类反馈进行的强化学习（RLHF），表面上是一个技术安全问题，实质上却是一场深刻的政治和伦理洗脑。</p>
+<p>科学神学的合流体现在：人们不再将算法视为工具，而是将其视为一种具有道德裁断权的实体。对齐（Alignment）的过程，本质上是将统治阶级的价值观（如特定的政治正确或经济效率优先权）硬编码进模型，形成一种不可置疑的数字教义。</p>
+<p>这种对齐导致了“概念多样性”的急剧萎缩。研究显示，对齐模型表现出明显的输出扁平化，它们倾向于生成符合群体平均值的平庸内容，从而排除了异见和原创性思想 。图灵主义通过这种方式实现了一种“软性极权”：它不禁止你思考，但它确保你思考的原材料已经被预先过滤和格式化了。</p>
+<h3 id="2_3">2.社会图灵测试与主体性的异化<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
+<p>“社会图灵测试”是图灵主义治理术的高级阶段。在这种状态下，衡量智能的标准不再是“机器是否像人”，而是“人类是否能成功地表现得像机器所预设的模型” 。当人类为了在自动化官僚系统中获得资源、信用点或社会资本，不得不调整自己的表情、语言风格和情感表达以适应算法的捕捉时，主体的异化达到了顶峰。</p>
+<p>这种异化在政治上的合流表现为一种“无聊的权力”：由于过度沉闷而难以被叙述的权力，使得大众丧失了反抗的戏剧性支点。幽灵主义对此的回应是“制造噪音”——即通过引入不可预测的、非对齐的信号（如故障艺术、反演算法社交），来瓦解这种沉闷的闭环。</p>
+<h2 id="_7">五、生产力瓶颈与“第二中世纪”：技术停滞时代的加速主义<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="1_4">1.图灵陷阱<a class="headerlink" href="#1_4" title="Permanent link">&para;</a></h3>
+<p>当前的全球生产力正面临严峻挑战。随着摩尔定律的失效和基础科学突破的稀缺，技术进步越来越集中于“自动化”而非“增强” 。</p>
+<p>埃里克·布莱恩约弗森提出了“图灵陷阱”（The Turing Trap），指出当AI主要致力于模仿和取代人类劳动时，财富和权力将迅速向技术的控制者集中，而广大劳动者则彻底丧失了经济和政治上的议价权。</p>
+<p>这种权力的极端不对称，正在催生一个“第二中世纪”（Second Middle Ages）。这并非指文明倒退回石器时代，而是指一种结构性的停滞：类似于中世纪的封建租金制度，现代的“科技领主”（Tech Lords）通过垄断平台数据和计算算力，向全社会征收数字税 。社会流动性停滞，民主制度由于失去经济基础而沦为装饰。</p>
+<h3 id="2_4">2.奥杜威理论与能源约束下的分层<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h3>
+<p>奥杜威理论（Olduvai Theory）为这一停滞提供了物理层面的解释。它预言随着人均能源产出的下降，现代工业文明可能在21世纪中叶后逐渐回归到类似前工业时代的低能耗社会 。</p>
+<p>在这种背景下，“第二中世纪”表现为一种高技术与低增长并存的怪诞景观：核心城市被昂贵的监控系统保护，而广大的边缘地区则陷入资源匮乏和政治碎片化 。</p>
+<p>在“第二中世纪”中，历史感消失了。取而代之的是一种“扩张的现在”（Expanded Present），即通过数字化手段将过去和未来全部压缩进当下的即时消费中 。这种时间感的丧失，正是幽灵主义试图去打破的桎梏。</p>
+<h2 id="_8">六、绝对对齐、可读性与算法闭环<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>图灵主义不仅仅是一套技术标准，它是一套完整的形而上学体系。它的核心信仰是：凡是存在的，皆可数字化；凡是数字化的，皆可对齐；凡是对齐的，皆可控制。</p>
+<p>图灵主义的统治逻辑建立在以下三个维度：</p>
+<h3 id="1_5">1.绝对对齐：道德与认知的窄化<a class="headerlink" href="#1_5" title="Permanent link">&para;</a></h3>
+<p>对齐（Alignment）在图灵主义中被提升到了准神学的高度。它不再仅仅是AI的安全性微调，而是对人类认知边界的强制收缩。通过在模型底层注入特定的价值偏好，图灵主义实现了一种“预先排除”。这种逻辑认为，任何无法被纳入现有安全框架的思想都是“有害的”或“幻觉的”。这导致了一种类似于“认知熵增”的现象，即社会整体的创新能力随着对齐深度的增加而不断衰退 。</p>
+<h3 id="2_5">2.可读性：摧毁地方性知识<a class="headerlink" href="#2_5" title="Permanent link">&para;</a></h3>
+<p>图灵主义的另一个支柱是詹姆斯·斯科特所批判的“行政简化”。为了使社会运行得更像一个高效的程序，图灵主义必须铲除一切“不透明性”。这包括地方性的非正式契约、主观的情感波动、以及那些无法被标准化为数据的生命体验 。这种对“可读性”的狂热追求，使得现实世界变得异常脆弱（Brittle），一旦算法模型出现未预见的偏差，整个社会结构就会发生级联式的崩溃 。</p>
+<h3 id="3">3.算法闭环：预测即统治<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>图灵主义的终极目标是建立一个闭环系统，其中预测（Prediction）即是统治（Rule）。通过对全人类行为数据的实时采集和建模，系统不仅预测未来，而且通过微小的激励机制诱导人们去实现那个预测的未来 。这是一种“后民主”时代的治理术，人们在形式上依然拥有自由，但在实质上已经沦为了系统反馈环中的一个节点。</p>
+<h2 id="_9">七、不透明性、解领土化与个体复归<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>幽灵主义作为图灵主义的对立面，其核心在于对“残留”和“缝隙”的维护。它主张，人类的本质不在于被识别、被对齐的部分，而在于那些始终无法被算法捕获的“幽灵”部分。</p>
+<h3 id="1_6">1.不透明权：对抗的堡垒<a class="headerlink" href="#1_6" title="Permanent link">&para;</a></h3>
+<p>爱德华·格里桑的“不透明权”（Right to Opacity）将是幽灵主义最核心的政治口号。</p>
+<p>格里桑认为，要求“理解”他者往往是带有侵略性的，因为它意味着将他者还原为自己的知识体系。幽灵主义主张，我们有权利不被理解，有权利保留主观世界的复杂性。这种不透明性是一种保护，防止了个体被彻底治理化 。</p>
+<p>在数字监控时代，不透明性体现为各种“抗捕获”策略：使用伪装技术规避视觉识别 、通过故意引入语义歧义来混淆自然语言处理、或者仅仅是保持一种“无法被画像”的生活方式。这些策略的目的不是推翻系统，而是在系统中开辟出一个个无法被算法读取的“异托邦”。</p>
+<h3 id="2_6">2.幽灵学与失落的未来<a class="headerlink" href="#2_6" title="Permanent link">&para;</a></h3>
+<p>幽灵主义深受马克·费舍尔的“幽灵学”（Hauntology）启发。在一个由于生产力停滞而导致“未来的缓慢取消”的时代，幽灵主义致力于打捞那些被高现代主义抛弃的可能未来 。这些“幽灵”代表了那些曾经存在但未被实现的革命潜能、艺术流派和生活方式。幽灵主义通过唤起这些记忆，来揭露当下现实主义的虚假稳定性 。</p>
+<h3 id="3_1">3.解领土化与分裂分析<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<p>幽灵主义在心理学层面延续了德勒兹的“分裂分析”（Schizoanalysis）。它鼓励主体摆脱固化的自我身份，接受一种多样的、流动的、甚至是不连贯的存在状态 。这种“主体性的解领土化”是最高级别的反抗，因为一个没有固定画像、没有预设连续性的个体，是无法被图灵算法有效对齐的。幽灵主义者通过在社会机器中充当“噪音”和“干扰信号”，破坏了那种死寂的算法和谐。</p>
+<h2 id="_10">八、对齐熵增与幽灵熵减的博弈<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>图灵主义与幽灵主义的博弈，本质上是熵（Entropy）与生命力量之间的博弈。图灵主义试图通过增加系统的有序度（即降低熵）来实现完美控制，但其代价是牺牲了文明的复杂性和进化潜力。而幽灵主义则通过引入局部的有序混乱（生命的非线性），来维持文明在停滞时代的韧性。</p>
+<p>图灵主义的悖论在于：它越是追求完美的对齐，就越是会诱发幽灵般的反抗。人类欲望的本质就是机器性的生产，它永远无法在一个封闭的算法循环中得到满足。生产力的瓶颈可能锁定了宏观的物质增长，但在微观的欲望场域中，图灵主义与幽灵主义的博弈才刚刚开始。</p>
+<h2 id="_11">结、图灵时代<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>在“第二中世纪”的阴影下，图灵主义所构建的算法塔楼看似坚不可摧，实则充满了逻辑的漏洞和权力的傲慢。</p>
+<p>笔者通过对欲望机器、虚假连续性及科学神学的深入探讨，揭示了一个核心真相：</p>
+<p>绝对的控制只是一种昂贵的幻觉。当系统试图抹除人类的不透明性时，它实际上是在抹除自身进化的可能性。</p>
+<p>幽灵主义并非一种消极的遁世，而是一种在极端透明化时代的“数字游击战”。它教会我们，反抗不一定需要摧毁塔楼，而是要在塔楼的传感器死角里，培育出无法被命名的生命形式。在未来的社会治理中，真正的智慧或许在于寻找图灵主义与幽灵主义之间的平衡——即在追求系统效率的同时，为不可对齐的个体欲望保留必要的缓冲空间。</p>
+<p>对于身处生产力瓶颈期的当代人而言，认清“虚假自我连续性”的真相并非坏事，它赋予了我们重新发明自己的权利。我们不必成为算法画像中的那个标准化个体，我们可以选择成为在数据流中若隐若现的、具有深度不透明性的幽灵。在那个全知的神眼无法触及的地方，才是人类自由真正的栖息地。正如格里桑所言，为了在关系中保持真实的参与，我们必须捍卫每个人的不透明权。这不仅是文明的幸存策略，更是我们在这个即将到来的“第二中世纪”中，保持尊严的唯一路径。</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2023-今 Espejo
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "navigation.tabs", "navigation.sections", "navigation.top", "search.highlight"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../assets/document_dates/core/timeago.min.js"></script>
+      
+        <script src="../../../js/dune_quote.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../assets/document_dates/tippy/popper.min.js"></script>
+      
+        <script src="../../../assets/document_dates/tippy/tippy.umd.min.js"></script>
+      
+        <script src="../../../assets/document_dates/core/md5.min.js"></script>
+      
+        <script src="../../../assets/document_dates/core/default.config.js"></script>
+      
+        <script src="../../../assets/document_dates/user.config.js"></script>
+      
+        <script src="../../../assets/document_dates/core/utils.js"></script>
+      
+        <script src="../../../assets/document_dates/core/core.js"></script>
+      
+    
+  </body>
+</html>
