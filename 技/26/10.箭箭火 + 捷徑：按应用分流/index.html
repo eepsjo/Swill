@@ -3136,7 +3136,7 @@
 
 
 <h1 id="_1">箭箭火 + 捷徑：按应用分流<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260429'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-04-29T23:55:00+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260429'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-04-30T01:13:03+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260429'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-04-29T23:55:00+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260429'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-04-30T01:19:05+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
 
 <details class="quote">
 <summary>不是有域名/IP 的网络分流了吗，应用分流是何意味了？</summary>
@@ -3210,7 +3210,7 @@
 <p>因为箭箭火不提供更换配置的捷徑，或者说它的更换配置是直接下载在线配置使用，这种切换方式太慢了。&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 <li id="fn:7">
-<p>这里用的是兜底直连的、基于 gfwlist 的分流规则，这么做原因有二：一，应用可以直接请求不存在的域名（或根本没有 sni 的请求）来钓去你的兜底规则的 IP，如果兜底是代理就把钓到了（这也是 DNS 泄露检测网站检测 DNS 出口的原理）；二，兜底如果来回在直连和代理中切换可能会导致 fake-ip 和 DNS 缓存问题。关于兜底直连是否造成 DNS 泄露请看<a href="https://eepsjo.github.io/Swill/%E6%8A%80/26/05.%E6%B5%85%E8%B0%88%E4%BB%A3%E7%90%86%E6%B3%84%E9%9C%B2/#1-ispgfw">浅谈代理泄露</a>。&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+<p>这里用的是兜底直连的、基于 gfwlist 的分流规则，这么做原因有二：一、国内应用可以直接请求不存在的域名（或根本没有 sni 的请求）来钓取你的兜底规则的 IP，如果兜底是代理就把代理出口 IP 钓到了（这也是 DNS 泄露检测网站检测 DNS 出口的原理）；二、兜底如果来回在直连和代理中切换可能会导致 fake-ip 和 DNS 缓存问题。关于兜底直连是否造成 DNS 泄露是个仁者见智的问题，笔者的观点请看<a href="https://eepsjo.github.io/Swill/%E6%8A%80/26/05.%E6%B5%85%E8%B0%88%E4%BB%A3%E7%90%86%E6%B3%84%E9%9C%B2/#1-ispgfw">浅谈代理泄露</a>。&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
