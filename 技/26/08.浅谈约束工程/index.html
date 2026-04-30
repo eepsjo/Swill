@@ -3025,41 +3025,41 @@
 
 
 <h1 id="_1">浅谈约束工程<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260412'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-04-12T12:00:00+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260412'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-04-12T12:00:00+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260412'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-04-12T12:00:00+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260430'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-04-30T14:41:27+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
 
 <blockquote>
 <p>Harness Engineering：LLM 落地生产生活的关键</p>
 </blockquote>
 <p>约束工程（我自己翻的）是一个很大的概念，简单来说目前的 Agent = Model + Harness。“Harness”原意是马具或约束装置，这里指在 LLM 之外所有能决定系统稳定交付的工程化设施。我把它分为 5 层架构：</p>
 <ol>
-<li>边界层：明确 LLM 扮演的角色、角色的目标、任务成功执行的标准，并对上下文信息进行裁剪和组织，防止信息过载导致 LLM “幻觉”或遗漏；</li>
-</ol>
+<li>
+<p>边界层：明确 LLM 扮演的角色、角色的目标、任务成功执行的标准，并对上下文信息进行裁剪和组织，防止信息过载导致 LLM “幻觉”或遗漏；</p>
 <blockquote>
 <p>熵减的起点。正如“融入集体会失去自我”，边界层的作用正是为 LLM 划定“自我”的绝对范围，防止其在海量信息中发生“人格崩塌”。</p>
 </blockquote>
-<ol>
-<li>工具层：解决给什么工具、何时调用工具以及提炼工具返回结果的问题。</li>
-</ol>
+</li>
+<li>
+<p>工具层：解决给什么工具、何时调用工具以及提炼工具返回结果的问题。</p>
 <blockquote>
 <p>遵循剃刀原则，不仅仅是简单地把 API 扔给 Agent。</p>
 </blockquote>
-<ol>
+</li>
 <li>
 <p>执行层：为 LLM 建立任务路径，让它准确理解目标、判断信息、生成、检查、修正的逻辑串联。</p>
 </li>
 <li>
 <p>记忆层：按需分离当前任务状态、中间结果和长期记忆，防止 Agent 因“失忆”在长任务链路中跑偏；</p>
-</li>
-</ol>
 <blockquote>
 <p>可以理解成 Neuro-sama 的备份，因为长任务已经接近 Neuro 的长期记忆需求，这里因为失忆产生的问题与“幻觉”类似，但前者主要由初始变量（边界问题）导致，这里主要是 LLM 长任务链路中累积的熵增引发。</p>
 </blockquote>
-<ol>
-<li>评估层：让 Agent 具备独立于对话之外的验证能力，知道自己做得好不好；在失败（如 API 超时、格式错误）时，有自动重试、切换路径或回滚的机制。</li>
-</ol>
+</li>
+<li>
+<p>评估层：让 Agent 具备独立于对话之外的验证能力，知道自己做得好不好；在失败（如 API 超时、格式错误）时，有自动重试、切换路径或回滚的机制。</p>
 <blockquote>
 <p><span class="arithmatex">\(Text \to Action \to Feedback \to Correction \to Fallback\)</span></p>
 </blockquote>
+</li>
+</ol>
 <p>注意到约束工程包括了早期 LLM 的两大工程阶段：提示词工程（Prompt Engineering）和上下文工程（Context Engineering），前者是 LLM 刚刚发展起来时为了解决“模型有没有听懂”的问题的工程，通过角色设定、风格约束等塑造局部的概率空间，让模型表达更准确（也就是 AI 心理学）；后者是词元（Token）概念提出后为了解决“信息给得对不对”的问题的工程，核心是检索增强生成（RAG），即在合适的时间把正确的外部知识和状态送入模型。约束工程的目标，是解决“任务能否持续做对”的问题：当 AI 从“回答问题”转向“执行长链路任务”时，需要一套系统来驾驭、约束和纠偏系统。用人话说，约束工程解答了“为什么同样的模型，在不同团队手里表现出的稳定性和成功率天差地别”等类似疑惑。</p>
 <p>我在 <a href="../../文/26/7.Agent 危机.md">Agent 危机</a>一文中指出，如果把 LLM 看作驾驶员，用户的电脑看作飞机，那么形如 OpenClaw 的系统就是驾驶舱；现在从约束工程的角度出发，这类约束系统不仅仅是驾驶舱，还是驾驶指南、操作逻辑、航空时刻图、与塔台（用户）沟通的桥梁等等，而飞机本身也将抽象到具体的任务而非硬件。</p>
 <blockquote>
@@ -3078,11 +3078,11 @@
 </li>
 <li>
 <p>让工程师不再写逻辑代码，而是设计环境本身，将巨大的操作方式改为目录索引，按需暴露子文档，防止模型注意力涣散。人话，使 Vibe Coding 中的 Vibe 成为工作核心。</p>
-</li>
-</ol>
 <blockquote>
 <p>Infrastructure as a Vibe (IaaV)。<br>1. 动态沙盒机制：Agent 应该不能也不被允许直接操作物理系统，而是在为其生成的容器镜像中执行。<br>2. 注意力索引：与其塞入大量 Token，不如将环境设计成层级化的空间（Levels <del>后室来的</del>），Agent 的“注意力”移动到哪个位置，才激活该位置的文档和工具引用。</p>
 </blockquote>
+</li>
+</ol>
 <p>AI 发展的重心正从“让模型看起来更聪明”转向“让模型在真实世界里稳定工作”，也就是从聊天的伙伴变成数字劳动力。由于 Agent 往往需要花费更多的 Token 等成本，也解决了我在 <a href="../../文/26/7.Agent 危机.md">Agent 危机</a>一文中的担忧：AI 技术虽然早已民用，但核心的、转化成生产力的约束工程短期不会大范围普及，避免 AI 沦入“‘未有效参与高阶级生产生活’和‘前沿技术平民化’两大泡沫”中。</p>
 <p>但普及是不可避免的，因为普及的本质是使用成本和学习成本的双下降。Agent 会像互联网一样普及吗？答案是肯定的，且速度会比互联网快得多。 互联网解决的是信息连接，而 Agent 解决的是能力杠杆。</p>
 <blockquote>
