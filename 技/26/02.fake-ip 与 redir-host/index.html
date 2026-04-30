@@ -3431,7 +3431,7 @@
     Note right of App: 阶段 2: 建立连接
     App-&gt;&gt;Core: 5. 连接到 1.2.3.4
     Note over Core: 匹配 Mappings 表: &lt;br/&gt;1.2.3.4 -&gt; google.com
-    Core-&gt;&gt;Remote: 6. 转发请求 (带上域名 google.com)
+    Core-&gt;&gt;Remote: 6. 通过代理协议封装、转发请求
     Remote--&gt;&gt;App: 7. 返回数据
     end</code></pre>
 <h2 id="fake-ip">fake-ip<a class="headerlink" href="#fake-ip" title="Permanent link">&para;</a></h2>
@@ -3446,7 +3446,7 @@
     rect rgb(30, 40, 50)
     Note right of App: 阶段 1: 劫持 DNS 响应
     App-&gt;&gt;Core: 1. 查询 google.com IP
-    Note over Core: 核心逻辑: &lt;br/&gt;不请求 DNS，直接从 fake-ip 池分配&lt;br/&gt;映射 198.18.0.1 &lt;-&gt; google.com
+    Note over Core: 不请求 DNS，直接从 fake-ip 池分配&lt;br/&gt;映射 198.18.0.1 &lt;-&gt; google.com
     Core--&gt;&gt;App: 2. 返回 Fake IP (198.18.0.1)
     end
 
