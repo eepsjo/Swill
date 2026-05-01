@@ -1,5 +1,5 @@
 mkdocs-material
-mkdocs-awesome-pages-plugin
+mkdocs-awesome-nav
 mkdocs-document-dates
 jieba
 ghp-import

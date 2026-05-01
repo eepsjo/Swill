@@ -1,7 +1,7 @@
 site_name: 数字泔水
 site_author: eepsjo
 site_url: https://eepsjo.github.io/Swill/
-copyright: '版权所有 &copy; 2023-至今 Espejo'
+copyright: '&copy; 23-26 Espejo'
 
 theme:
   language: zh
@@ -55,7 +55,7 @@ markdown_extensions:
       permalink: true
 
 plugins:
-  - awesome-pages
+  - awesome-nav
   - search
   - document-dates:
       position: top
@@ -69,5 +69,5 @@ extra:
     filename: null
 
 extra_javascript:
-  - js/dune_quote.js
+  - assets/dune_quote/1.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
