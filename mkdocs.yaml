@@ -55,7 +55,8 @@ markdown_extensions:
       permalink: true
 
 plugins:
-  - awesome-nav
+  - awesome-nav:
+      filename: .nav
   - search
   - document-dates:
       position: top
