@@ -3372,12 +3372,12 @@
 
 
 <h1 id="ech">代理中的 ECH<a class="headerlink" href="#ech" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260317'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-03-17T12:00:00+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260404'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-04-04T12:00:00+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260317'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-03-17T12:00:00+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260505'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-05-05T22:09:18+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
 
 <blockquote>
-<p>文章将讲解 vless + tls(ech) + ws 的详细流程，并解释 vless 协议的某些核心点。</p>
+<p>将讲解 vless + tls(ech) + ws 的流程，并解释 vless 协议的某些核心点。</p>
 </blockquote>
-<p>先说结论：<strong>给代理套 ech，只需要代理本身开启 ech 即可；换言之 ech 的正确用法就是隐藏代理 sni 而不是在浏览器中开启。</strong> 在 cf worker 搭建的节点甚至无需修改服务端即可使用 ech。</p>
+<p>先说结论：<strong>我们只需要用 ECH 隐藏代理过程中明文的 sni 即可，无需在浏览器、DNS 解析等应用层面配置，因为这些流量本来就包含在代理流量中。</strong> 换言之 ech 只需要在客户端的节点信息中配置，其他任何地方包括服务端都不需要配置（当然，如果域名没有托管在形如 cf 无需配置旧支持 ech 的平台时还是要配置服务端的）。</p>
 <p>网上所谓的给自己的域名套 ech 纯粹脱裤子放屁/想搞慈善/想搞蜜罐；而托管在 cf 的域名并不是所谓天生支持 ech，而是由于 cf 共享 ech config，使得客户端<strong>可以请求任一支持获取 ech config 的域名来获取这个共享的 config。</strong></p>
 <p>具体来说是从 HTTPS 的 dns 记录中获取，如 <a href="https://dns.google/resolve?name=cloudflare-ech.com&amp;type=HTTPS">https://dns.google/resolve?name=cloudflare-ech.com&amp;type=HTTPS</a> 可以获取到<br>
 <code>{"Status":0,"TC":false,"RD":true,"RA":true,"AD":false,"CD":false,"Question":[{"name":"cloudflare-ech.com.","type":65}],"Answer":[{"name":"cloudflare-ech.com.","type":65,"TTL":300,"data":"1 . alpn=h3,h2 ipv4hint=104.18.10.118,104.18.11.118 ech=AEX+DQBB7AAgACAIhfOikk0PVYN6CwzRQuwctTYT4Sr+Csruv3Dqe/19ZwAEAAEAAQASY2xvdWRmbGFyZS1lY2guY29tAAA= ipv6hint=2606:4700::6812:a76,2606:4700::6812:b76"}],"Comment":"Response from 173.245.58.158."}</code>
