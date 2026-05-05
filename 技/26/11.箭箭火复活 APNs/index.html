@@ -27,7 +27,7 @@
     
     
       
-        <title>箭箭火复活 APNs（WIP） - 数字泔水</title>
+        <title>箭箭火复活 APNs - 数字泔水</title>
       
     
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#apnswip" class="md-skip">
+        <a href="#apns" class="md-skip">
           跳转至
         </a>
       
@@ -130,7 +130,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              箭箭火复活 APNs（WIP）
+              箭箭火复活 APNs
             
           </span>
         </div>
@@ -1744,7 +1744,7 @@
   <span class="md-ellipsis">
     
   
-    箭箭火复活 APNs（WIP）
+    箭箭火复活 APNs
   
 
     
@@ -3304,11 +3304,18 @@
 
 
 
-<h1 id="apnswip">箭箭火复活 APNs（WIP）<a class="headerlink" href="#apnswip" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260505'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-05-05T21:19:15+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260505'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-05-05T21:19:15+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
+<h1 id="apns">箭箭火复活 APNs<a class="headerlink" href="#apns" title="Permanent link">&para;</a></h1>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260505'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-05-05T21:19:15+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260505'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-05-05T21:52:19+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
 
-<p>此处给出一<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/m/apns">模块</a>用于代理 APNs 流量；也可以试试<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/m/apns-ez">精简版</a>，比网上那些解决方案更简洁，需要指出规则并非我测试和原创。</p>
-<p>本来正是利用了 APNs 的便利性才能实现不使用手机时关闭箭箭火来省电等，现在反倒需要一直开启了。</p>
+<blockquote>
+<p>本文所述箭箭火版本为 2.2.80 (3082)。</p>
+</blockquote>
+<p>给出一<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/m/apns">模块</a>用于代理 APNs 流量；也可以试试<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/m/apns-ez">精简版</a>。精简版仅代理 <code>*.push.apple.com</code> 域名，而原版模块则是在此基础上参考了 <a href="https://support.apple.com/en-us/102266#:~:text=assigned%20to%20Apple.-,If%20you,-can%27t%20allow%20access">Apple 的官方文档</a>，将可能用于 APNs 的 IP 段全部代理，来应对可能的硬编码 IP 或 DNS 污染情况。</p>
+<p>安装模块后可以根据自己的网络环境决定是否开启“设置 - 隧道 - 包括 APNs”，具体来说如果是纯 WiFi 环境则无需开启，在使用 SIM 的蜂窝流量时 iOS 可能倾向于更底层的用直连路由 APNs 流量，因此需要开启上述设置。设置完成后启用模块，然后开启关闭飞行模式一次（这是网传的方法，根本目的是彻底关闭再开启一次箭箭火隧道），即可复活 APNs。</p>
+<blockquote>
+<p>如果你是从<a href="../10.%E7%AE%AD%E7%AE%AD%E7%81%AB%2B%E6%8D%B7%E5%BE%91%EF%BC%9A%E6%8C%89%E5%BA%94%E7%94%A8%E5%88%86%E6%B5%81/">上一篇文章</a>的注释跳过来的，那我简单说两句：原本正是利用了 APNs 的无需开启代理就能收到消息的便利性，才能实现不使用手机时关闭箭箭火来省电（也就是箭箭火自带的、我在上篇文章中划掉的“睡眠时断开”），现在需要一直开启了；但如果你不需要复活 APNs 的话倒是不影响。</p>
+</blockquote>
+<p>代理 APNs 会引发一些问题。假设 PROXY 组节点全挂了，那么 APNs 也挂了，国内 App 的消息也收不到；其次 APNs 挂代理本身就会增加延迟。还是建议关闭 iPhone 对应 App 的通知（或卸载它们。既然 Apple 会主动屏蔽这些软件的 APNs，就有理由怀疑它会和 GFW 分享哪些设备在使用这些软件），使用其他设备接收信息吧（物理分流）。硬要用的话，还是参考<a href="../10.%E7%AE%AD%E7%AE%AD%E7%81%AB%2B%E6%8D%B7%E5%BE%91%EF%BC%9A%E6%8C%89%E5%BA%94%E7%94%A8%E5%88%86%E6%B5%81/">上一篇文章</a>结合应用分流使用比较合适（这也是为啥我写成模块，因为这样可以无视使用的配置生效，但实测使用体验很差，因为切换配置会打断 APNs 的长连接）。</p>
 
 
 
