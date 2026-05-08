@@ -10,10 +10,14 @@ updated: 1970-01-01 12:00:00+08:00
 `~/.pam_environment`
 
   * 语言 (最低优先级)：
-    ```LANG=zh_TW.UTF-8```
+    ```
+    LANG=zh_TW.UTF-8
+    ```
 
   * 应用程序语言 (优先级由左至右)：
-    ```LANGUAGE=zh_TW:zh_CN:en_US```
+    ```
+    LANGUAGE=zh_TW:zh_CN:en_US
+    ```
 
   * 区域格式：简中 (覆盖 LANG)：
     ```
@@ -36,8 +40,12 @@ updated: 1970-01-01 12:00:00+08:00
 
 `/etc/default/locale`
 
-  * `LC_CTYPE=en_US.UTF-8`
+  * ```
+    LC_CTYPE=en_US.UTF-8
+    ```
 
 ### 日期格式
 
-* `MM / dd EEE HH : mm`
+* ```
+  MM / dd EEE HH : mm
+  ```
