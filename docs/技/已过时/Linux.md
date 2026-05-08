@@ -10,25 +10,29 @@ updated: 1970-01-01 12:00:00+08:00
 `~/.pam_environment`
 
   * 语言 (最低优先级)：
-    `LANG=zh_TW.UTF-8`
+    ```LANG=zh_TW.UTF-8```
 
   * 应用程序语言 (优先级由左至右)：
-    `LANGUAGE=zh_TW:zh_CN:en_US`
+    ```LANGUAGE=zh_TW:zh_CN:en_US```
 
   * 区域格式：简中 (覆盖 LANG)：
-    `LC_TIME=zh_CN.UTF-8`
-    `LC_NUMERIC=zh_CN.UTF-8`
-    `LC_MONETARY=zh_CN.UTF-8`
-    `LC_PAPER=zh_CN.UTF-8`
-    `LC_MEASUREMENT=zh_CN.UTF-8`
+    ```
+    LC_TIME=zh_CN.UTF-8
+    LC_NUMERIC=zh_CN.UTF-8
+    LC_MONETARY=zh_CN.UTF-8
+    LC_PAPER=zh_CN.UTF-8
+    LC_MEASUREMENT=zh_CN.UTF-8
+    ```
 
   * 其他配置：繁中：
-    `LC_COLLATE=zh_TW.UTF-8`
-    `LC_NAME=zh_TW.UTF-8`
-    `LC_ADDRESS=zh_TW.UTF-8`
-    `LC_TELEPHONE=zh_TW.UTF-8`
-    `LC_IDENTIFICATION=zh_TW.UTF-8`
-    `LC_MESSAGES=zh_TW.UTF-8`
+    ```
+    LC_COLLATE=zh_TW.UTF-8
+    LC_NAME=zh_TW.UTF-8
+    LC_ADDRESS=zh_TW.UTF-8
+    LC_TELEPHONE=zh_TW.UTF-8
+    LC_IDENTIFICATION=zh_TW.UTF-8
+    LC_MESSAGES=zh_TW.UTF-8
+    ```
 
 `/etc/default/locale`
 
@@ -36,5 +40,4 @@ updated: 1970-01-01 12:00:00+08:00
 
 ### 日期格式
 
-* 日期菜单格式化：
-  `MM / dd EEE HH : mm`
+* `MM / dd EEE HH : mm`
