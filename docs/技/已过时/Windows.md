@@ -39,17 +39,24 @@ updated: 1970-01-01 12:00:00+08:00
 ## 电源 & 睡眠
 
 ### USB 选择性暂停
+
 > 在 S0 睡眠下该选项默认隐藏，需要用本方法才可使选项显示在“高级电源选项”中。下同
+
 1. 打开注册表编辑器导航至
    ```
    HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\2a7374...\48e6b7...
    ```
+
    > 需要注意`...\PowerSettings\...` 后的 GUID 在不同的电脑或者不同的系统版本中可能不完全相同，但有相似之处
+
 2. 创建或修改一个 DWORD (32 位) 值 `Attributes`，将其值设置为 2
+
    > 这只能使选项显现，具体设置还需到“高级电源选项”中设置。下同
 
 ### 待机状态下的网络连接性
+
 > 此项为 S0 模式下电脑接入电源后能否深度睡眠的关键！
+
 1. 打开注册表编辑器导航至
    ```
    HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\f15576e8-...
