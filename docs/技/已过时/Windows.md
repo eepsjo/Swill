@@ -47,10 +47,10 @@ updated: 1970-01-01 12:00:00+08:00
    HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\2a7374...\48e6b7...
    ```
 
-   > 需要注意`...\PowerSettings\...` 后的 GUID 在不同的电脑或者不同的系统版本中可能不完全相同，但有相似之处
-
 2. 创建或修改一个 DWORD (32 位) 值 `Attributes`，将其值设置为 2
 
+   > 需要注意`...\PowerSettings\...` 后的 GUID 在不同的电脑或者不同的系统版本中可能不完全相同，但有相似之处。下同
+   
    > 这只能使选项显现，具体设置还需到“高级电源选项”中设置。下同
 
 ### 待机状态下的网络连接性
