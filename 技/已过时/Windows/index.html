@@ -3820,22 +3820,32 @@
 <h2 id="_3">电源 &amp; 睡眠<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="usb">USB 选择性暂停<a class="headerlink" href="#usb" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p>在 S0 睡眠下该选项默认隐藏，需要用本方法才可使选项显示在“高级电源选项”中。下同
-1. 打开注册表编辑器导航至
+<p>在 S0 睡眠下该选项默认隐藏，需要用本方法才可使选项显示在“高级电源选项”中。下同</p>
+</blockquote>
+<ol>
+<li>打开注册表编辑器导航至
    <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\2a7374...\48e6b7...
-</span></code></pre></div>
-需要注意<code>...\PowerSettings\...</code> 后的 GUID 在不同的电脑或者不同的系统版本中可能不完全相同，但有相似之处
-2. 创建或修改一个 DWORD (32 位) 值 <code>Attributes</code>，将其值设置为 2
-这只能使选项显现，具体设置还需到“高级电源选项”中设置。下同</p>
+</span></code></pre></div></li>
+</ol>
+<blockquote>
+<p>需要注意<code>...\PowerSettings\...</code> 后的 GUID 在不同的电脑或者不同的系统版本中可能不完全相同，但有相似之处</p>
+</blockquote>
+<ol>
+<li>创建或修改一个 DWORD (32 位) 值 <code>Attributes</code>，将其值设置为 2</li>
+</ol>
+<blockquote>
+<p>这只能使选项显现，具体设置还需到“高级电源选项”中设置。下同</p>
 </blockquote>
 <h3 id="_4">待机状态下的网络连接性<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p>此项为 S0 模式下电脑接入电源后能否深度睡眠的关键！
-1. 打开注册表编辑器导航至
-   <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\f15576e8-...
-</span></code></pre></div>
-2. 创建或修改一个 DWORD (32 位) 值 <code>Attributes</code>，将其值设置为 2</p>
+<p>此项为 S0 模式下电脑接入电源后能否深度睡眠的关键！</p>
 </blockquote>
+<ol>
+<li>打开注册表编辑器导航至
+   <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\f15576e8-...
+</span></code></pre></div></li>
+<li>创建或修改一个 DWORD (32 位) 值 <code>Attributes</code>，将其值设置为 2</li>
+</ol>
 <h3 id="_5">唤醒计时器<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ol>
 <li>打开注册表编辑器导航至
