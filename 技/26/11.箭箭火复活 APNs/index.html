@@ -3421,7 +3421,7 @@
 
 
 <h1 id="apns">箭箭火复活 APNs<a class="headerlink" href="#apns" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260505'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-05-05T21:19:15+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260514'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-05-14T22:54:42+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260505'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-05-05T21:19:15+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260514'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-05-14T22:59:26+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
 
 <details class="quote">
 <summary>警告！WIP</summary>
@@ -3436,19 +3436,21 @@
 <p>笔者也曾考虑过使用 MITM，在 APNs 直连的前提下欺骗服务器给我们发消息，但这与域前置等仅绕过审查不代理等用法的场景不同：那些场景是目的服务商没有主动屏蔽，而这个场景是 APNs 的主动屏蔽，因此必须代理。在不搭建 VPS 仅使用手头现有的节点的情况下，该模块是最优解。</p>
 <p>以下是使用模块时需要注意的点：</p>
 <ol>
-<li>模块使用 <code>fallback</code> 代理组代理 APNs（这个组的名字是 <code>APNS</code>），需要在模块的“编辑参数”中手动填入一个或多个代理节点或分组的名称，每个节点或分组之间用英文逗号分隔。默认值 <code>PROXY,DIRECT</code>。</li>
-</ol>
+<li>
+<p>模块使用 <code>fallback</code> 代理组代理 APNs（这个组的名字是 <code>APNS</code>），需要在模块的“编辑参数”中手动填入一个或多个代理节点或分组的名称，每个节点或分组之间用英文逗号分隔。默认值 <code>PROXY,DIRECT</code>。</p>
 <blockquote>
 <p>建议填写一个或多个稳定、低延迟的节点，然后在末尾填写 <code>DIRECT</code>。<br>手动指定固定的节点，是防止切换配置时、或 PROXY 组本身会自己切换时，打断 APNs 的长连接导致信息接收延迟。<br>填写直连作为回落兜底，是防止节点全部超时导致 APNs 完全失效（至少直连时不需要绕过 APNs 屏蔽的应用还能收到消息）。</p>
 </blockquote>
-<ol>
-<li>精简模式是把前文所述的 APNs 的 IP（参考 <a href="https://support.apple.com/en-us/102266#:~:text=assigned%20to%20Apple.-,If%20you,-can%27t%20allow%20access">Apple 的官方文档</a>，这里说明了 APNs 可能用到的 IP 段）恢复直连，即仅代理 <code>+.push.apple.com</code> 域名，这是因为理论上箭箭火的 fakeip 模式不需要代理任何 IP 段。但在实际使用中，注意到可能存在直接访问硬编码 IP 的情况。实测精简模式仅在使用纯 Wi-Fi 的场景下稳定。</li>
-</ol>
+</li>
+<li>
+<p>精简模式是把前文所述的 APNs 的 IP（参考 <a href="https://support.apple.com/en-us/102266#:~:text=assigned%20to%20Apple.-,If%20you,-can%27t%20allow%20access">Apple 的官方文档</a>，这里说明了 APNs 可能用到的 IP 段）恢复直连，即仅代理 <code>+.push.apple.com</code> 域名，这是因为理论上箭箭火的 fakeip 模式不需要代理任何 IP 段。但在实际使用中，注意到可能存在直接访问硬编码 IP 的情况。实测精简模式仅在使用纯 Wi-Fi 的场景下稳定。</p>
 <blockquote>
 <p>开启精简模式只需要在模块对应的位置填写 <code>DIRECT</code> 即可，不填的话默认是前文所述的 APNS 组，即代理 IP 段。笔者本来想设计成开关，无奈箭箭火并不支持三重或非逻辑写法，故采用这种笨办法。</p>
 </blockquote>
-<ol>
-<li>根据自己的网络环境决定是否开启“设置 - 隧道 - 包括 APNs”，具体来说，如果是纯 Wi-Fi 环境无需开启，但使用蜂窝网络时 iOS 倾向于更底层的直连路由 APNs 流量（以及前文所述可能的硬编码 IP），因此需要开启这个设置。</li>
+</li>
+<li>
+<p>根据自己的网络环境决定是否开启“设置 - 隧道 - 包括 APNs”，具体来说，如果是纯 Wi-Fi 环境无需开启，但使用蜂窝网络时 iOS 倾向于更底层的直连路由 APNs 流量（以及前文所述可能的硬编码 IP），因此需要开启这个设置。</p>
+</li>
 </ol>
 <p>模块配置完成后，开启关闭飞行模式一次（这是网传的方法，根本目的是彻底关闭再开启一次箭箭火隧道），即可复活 APNs。</p>
 <p><del>代理 APNs 会引发一些问题：假设 PROXY 组节点全挂了，那么 APNs 也挂了，国内 App 的消息也收不到；其次 APNs 挂代理本身就会增加延迟。还是建议关闭 iPhone 对应 App 的通知（或卸载它们。既然 Apple 会主动屏蔽这些软件的 APNs，就有理由怀疑它会和 GFW 分享哪些设备在使用这些软件），使用其他设备接收信息吧（物理分流）。硬要用的话，还是参考<a href="../10.%E7%AE%AD%E7%AE%AD%E7%81%AB%2B%E6%8D%B7%E5%BE%91%EF%BC%9A%E6%8C%89%E5%BA%94%E7%94%A8%E5%88%86%E6%B5%81/">上一篇文章</a>结合应用分流使用比较合适（这也是为啥我写成模块，因为这样可以无视使用的配置生效，但实测使用体验很差，因为切换配置可能会打断 APNs 的长连接）。</del></p>
