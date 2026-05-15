@@ -3421,7 +3421,7 @@
 
 
 <h1 id="apns">箭箭火复活 APNs<a class="headerlink" href="#apns" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260505'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-05-05T21:19:15+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260514'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-05-14T22:59:26+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260505'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-05-05T21:19:15+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260515'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-05-15T11:19:24+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
 
 <details class="quote">
 <summary>警告！WIP</summary>
@@ -3444,9 +3444,6 @@
 </li>
 <li>
 <p>精简模式是把前文所述的 APNs 的 IP（参考 <a href="https://support.apple.com/en-us/102266#:~:text=assigned%20to%20Apple.-,If%20you,-can%27t%20allow%20access">Apple 的官方文档</a>，这里说明了 APNs 可能用到的 IP 段）恢复直连，即仅代理 <code>+.push.apple.com</code> 域名，这是因为理论上箭箭火的 fakeip 模式不需要代理任何 IP 段。但在实际使用中，注意到可能存在直接访问硬编码 IP 的情况。实测精简模式仅在使用纯 Wi-Fi 的场景下稳定。</p>
-<blockquote>
-<p>开启精简模式只需要在模块对应的位置填写 <code>DIRECT</code> 即可，不填的话默认是前文所述的 APNS 组，即代理 IP 段。笔者本来想设计成开关，无奈箭箭火并不支持三重或非逻辑写法，故采用这种笨办法。</p>
-</blockquote>
 </li>
 <li>
 <p>根据自己的网络环境决定是否开启“设置 - 隧道 - 包括 APNs”，具体来说，如果是纯 Wi-Fi 环境无需开启，但使用蜂窝网络时 iOS 倾向于更底层的直连路由 APNs 流量（以及前文所述可能的硬编码 IP），因此需要开启这个设置。</p>
