@@ -3654,7 +3654,7 @@
 
 
 <h1 id="apns">箭箭火复活 APNs<a class="headerlink" href="#apns" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260505'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-05-05T21:19:15+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260517'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-05-17T15:17:25+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260505'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-05-05T21:19:15+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260517'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-05-17T16:09:39+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
 
 <details class="quote">
 <summary>警告！WIP</summary>
@@ -3812,8 +3812,12 @@
 <h3 id="pushapplecom">+.push.apple.com<a class="headerlink" href="#pushapplecom" title="Permanent link">&para;</a></h3>
 <p>是否代理 <code>DOMAIN-SUFFIX,push.apple.com</code>。默认开启。</p>
 <h3 id="ipall-ips">IPall &amp; IPs<a class="headerlink" href="#ipall-ips" title="Permanent link">&para;</a></h3>
-<p>是否代理 APNs 的 IP 段。默认开启 <code>IPall</code>。注意若要使用 <code>IPs</code> 必须关闭 <code>IPall</code>。</p>
-<p>参考了 <a href="https://support.apple.com/en-us/102266#:~:text=assigned%20to%20Apple.-,If%20you,-can%27t%20allow%20access">Apple 的官方文档</a>，这里说明了 APNs 的 IP 段。</p>
+<p>是否代理 APNs 的 IP 段。默认开启 <code>IPall</code>。</p>
+<p>参考 <a href="https://support.apple.com/en-us/102266">Apple 的官方文档</a>，这里说明了 APNs 的 IP 段。</p>
+<p><code>IPall</code> 为文中属于 Apple 的一个 IP 段 <code>17.0.0.0/8</code>，<code>IPs</code> 则是文中给出的更小的规则集。<code>IPall</code> 可以降低匹配规则的时间，放在了上面，因此若要使用 <code>IPs</code> 需关闭 <code>IPall</code> 并打开 <code>IPs</code>。</p>
+<blockquote>
+<p>使用 <code>IPall</code> 时网络行为更接近兜底代理。</p>
+</blockquote>
 <hr />
 <p>模块配置完成后，开启关闭飞行模式一次（这是网传的方法，目的是彻底关闭再开启一次箭箭火隧道）即可复活 APNs。</p>
 <h2 id="_3">原理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
