@@ -3654,7 +3654,7 @@
 
 
 <h1 id="apns">箭箭火复活 APNs<a class="headerlink" href="#apns" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260505'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-05-05T21:19:15+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260517'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-05-17T14:36:33+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260505'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-05-05T21:19:15+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260517'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-05-17T14:59:14+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
 
 <details class="quote">
 <summary>警告！WIP</summary>
@@ -3664,7 +3664,7 @@
 <p>给出一<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/m/apns">模块</a>解决 APNs 的问题。</p>
 <h2 id="_1">测试<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>测试软件：太鼓。</p>
-<p>测试环境：始终连接 + 睡眠时断开。<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/c/p">兜底代理配置</a>和<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/c/d">兜底直连配置</a>。模块的“apnS”填写“PROXY”并使用稳定低延迟的节点。分别测试太鼓不在前台但设备未息屏、以及息屏后静置半分钟的状态。</p>
+<p>测试环境：始终连接 + <strong>睡眠时断开</strong>。<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/c/p">兜底代理配置</a>和<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/c/d">兜底直连配置</a>。模块的“apnS”填写“PROXY”并使用稳定低延迟的节点。分别测试太鼓不在前台但设备未息屏、以及息屏后静置半分钟的状态。</p>
 <p>测试结果图鉴：</p>
 <ul>
 <li>
@@ -3674,10 +3674,7 @@
 <p>“❌”表示息屏与否都不能收到消息；</p>
 </li>
 <li>
-<p>“⚠”表示息屏时收不到但不息屏时可以。引起该现象的原因可能是兜底直连 + 睡眠时断开；</p>
-</li>
-<li>
-<p>“🧐”还在测试。</p>
+<p>“⚠”表示息屏时收不到但不息屏时可以。</p>
 </li>
 </ul>
 <table>
@@ -3693,7 +3690,7 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">🧐</td>
+<td style="text-align: left;">❌</td>
 <td style="text-align: left;">代理</td>
 <td style="text-align: left;">蜂窝</td>
 <td style="text-align: left;">-</td>
@@ -3706,7 +3703,7 @@
 <td style="text-align: left;">Wi-Fi</td>
 <td style="text-align: left;">-</td>
 <td style="text-align: left;">-</td>
-<td style="text-align: left;">这种情况不管国内外通知都几乎没有延迟</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;">❌</td>
