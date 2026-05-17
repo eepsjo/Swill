@@ -1932,10 +1932,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ipall" class="md-nav__link">
+  <a href="#ips" class="md-nav__link">
     <span class="md-ellipsis">
       
-        IPall
+        IPs
       
     </span>
   </a>
@@ -3599,10 +3599,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ipall" class="md-nav__link">
+  <a href="#ips" class="md-nav__link">
     <span class="md-ellipsis">
       
-        IPall
+        IPs
       
     </span>
   </a>
@@ -3654,7 +3654,7 @@
 
 
 <h1 id="apns">箭箭火复活 APNs<a class="headerlink" href="#apns" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260505'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-05-05T21:19:15+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260517'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-05-17T16:18:23+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260505'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-05-05T21:19:15+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260517'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-05-17T16:46:49+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
 
 <details class="quote">
 <summary>警告！WIP</summary>
@@ -3690,7 +3690,7 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">⚠</td>
+<td style="text-align: left;">❌</td>
 <td style="text-align: left;">代理</td>
 <td style="text-align: left;">蜂窝</td>
 <td style="text-align: left;">-</td>
@@ -3811,25 +3811,18 @@
 <p>与下一条参数冲突，故创建此选项让用户自行定夺。</p>
 <h3 id="pushapplecom">+.push.apple.com<a class="headerlink" href="#pushapplecom" title="Permanent link">&para;</a></h3>
 <p>是否代理 <code>DOMAIN-SUFFIX,push.apple.com</code>。默认开启。</p>
-<h3 id="ipall">IPall<a class="headerlink" href="#ipall" title="Permanent link">&para;</a></h3>
+<h3 id="ips">IPs<a class="headerlink" href="#ips" title="Permanent link">&para;</a></h3>
 <p>是否代理 APNs 的 IP 段。默认开启。</p>
-<p>参考 <a href="https://support.apple.com/en-us/102266">Apple 的官方文档</a>，这里说明了 APNs 的 IP 段。</p>
+<p>参考了 <a href="https://support.apple.com/102266">Apple 的官方文档</a>，这里说明了 APNs 的 IP 段。</p>
 <hr />
 <p>模块配置完成后，开启关闭飞行模式一次（这是网传的方法，目的是彻底关闭再开启一次箭箭火隧道）即可复活 APNs。</p>
 <h2 id="_3">原理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>基于笔者对 APNs 屏蔽的技术原理的<em>猜测</em>：<em>笔者认为</em>，APNs 通过检测用户的 IP，再根据应用的 ID 来定向屏蔽消息推送。</p>
 <h2 id="_4">废稿待整理<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p><del>模块通过代理 APNs 的域名和 IP，让 APNs 服务器认为我们在境外，即和 APNs 服务器沟通的 IP 不是东大的。</del></p>
-<hr />
 <p><del>根据网络环境决定是否开启“设置 - 隧道 - 包括 APNs”，具体来说，如果是纯 Wi-Fi 环境无需开启，但使用蜂窝网络时需要。</del></p>
-<hr />
 <p><del>笔者也曾考虑过使用 MITM，在 APNs 直连的前提下欺骗服务器给我们发消息，但这与域前置等仅绕过审查不代理等用法的场景不同：那些场景是目的服务商没有主动屏蔽，而这个场景是 APNs 的主动屏蔽，因此必须代理。</del></p>
-<hr />
 <p><del>代理 APNs 会引发一些问题：假设 PROXY 组节点全挂了，那么 APNs 也挂了，国内 App 的消息也收不到；其次 APNs 挂代理本身就会增加延迟。还是建议关闭 iPhone 对应 App 的通知（或卸载它们。既然 Apple 会主动屏蔽这些软件的 APNs，就有理由怀疑它会和 GFW 分享哪些设备在使用这些软件），使用其他设备接收信息吧（物理分流）。硬要用的话，还是参考<a href="../10.%E7%AE%AD%E7%AE%AD%E7%81%AB%2B%E6%8D%B7%E5%BE%91%EF%BC%9A%E6%8C%89%E5%BA%94%E7%94%A8%E5%88%86%E6%B5%81/">上一篇文章</a>结合应用分流使用比较合适。</del></p>
-<hr />
-<p><del>### IPall &amp; IPs</del></p>
-<p><del><code>IPall</code> 为文中属于 Apple 的一个 IP 段 <code>17.0.0.0/8</code>，<code>IPs</code> 则是文中给出的更小的规则集。<code>IPall</code> 可以降低匹配规则的时间，放在了上面，因此若要使用 <code>IPs</code> 需关闭 <code>IPall</code> 并打开 <code>IPs</code>。</del></p>
-<p><del>&gt; 使用 <code>IPall</code> 时网络行为更接近兜底代理。</del></p>
 
 
 
