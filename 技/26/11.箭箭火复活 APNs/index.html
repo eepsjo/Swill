@@ -3676,7 +3676,7 @@
 
 
 <h1 id="apns">箭箭火复活 APNs<a class="headerlink" href="#apns" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260505'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-05-05T21:19:15+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260517'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-05-17T18:04:11+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260505'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-05-05T21:19:15+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260517'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-05-17T18:09:35+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
 
 <details class="quote">
 <summary>警告！WIP</summary>
@@ -3712,7 +3712,7 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">❌</td>
+<td style="text-align: left;">⚠</td>
 <td style="text-align: left;">代理</td>
 <td style="text-align: left;">蜂窝</td>
 <td style="text-align: left;">-</td>
@@ -3829,12 +3829,16 @@
 <p>上述模式的测试用参数，具体用法参照<a href="https://lowertop.github.io/Shadowrocket/">箭箭火使用文档</a>。</p>
 <h3 id="init-01stpushapplecom">init-?01st.push.apple.com<a class="headerlink" href="#init-01stpushapplecom" title="Permanent link">&para;</a></h3>
 <p>是否代理 <code>DOMAIN-WILDCARD,init-?01st.push.apple.com</code>。默认关闭（开启表示代理，关闭以切换到直连。下同）。</p>
+<blockquote>
 <p>在兜底代理配置的 <a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/refs/heads/release/direct.txt">D 规则集</a>中存在两条直连规则</p>
+</blockquote>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">payload</span><span class="p">:</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;init-p01st.push.apple.com&#39;</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;init-s01st.push.apple.com&#39;</span>
 </span></code></pre></div>
+<blockquote>
 <p>与下一条参数冲突，故创建此选项让用户自行定夺。</p>
+</blockquote>
 <h3 id="pushapplecom">+.push.apple.com<a class="headerlink" href="#pushapplecom" title="Permanent link">&para;</a></h3>
 <p>是否代理 <code>DOMAIN-SUFFIX,push.apple.com</code>。默认开启。</p>
 <h3 id="ips">IPs<a class="headerlink" href="#ips" title="Permanent link">&para;</a></h3>
