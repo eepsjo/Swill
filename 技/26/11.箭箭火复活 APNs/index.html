@@ -1879,6 +1879,17 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
+        测试
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         编辑参数
       
     </span>
@@ -1937,10 +1948,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         原理和注意事项
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        废稿待整理
       
     </span>
   </a>
@@ -3524,6 +3546,17 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
+        测试
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         编辑参数
       
     </span>
@@ -3582,10 +3615,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         原理和注意事项
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        废稿待整理
       
     </span>
   </a>
@@ -3610,18 +3654,140 @@
 
 
 <h1 id="apns">箭箭火复活 APNs<a class="headerlink" href="#apns" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260505'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-05-05T21:19:15+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260516'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-05-17T02:34:38+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260505'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-05-05T21:19:15+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260517'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-05-17T14:26:37+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
 
 <details class="quote">
 <summary>警告！WIP</summary>
 <p>此项目内容正在维护或持续更新中，含有大量笔者正在测试的技术方法或尚未整理完全的思想理论，请读者知悉。</p>
 </details>
-<blockquote>
-<p>如果本文所述的功能在你的箭箭火里没有，可能是版本太低了。</p>
-</blockquote>
 <p><a href="../10.%E7%AE%AD%E7%AE%AD%E7%81%AB%2B%E6%8D%B7%E5%BE%91%EF%BC%9A%E6%8C%89%E5%BA%94%E7%94%A8%E5%88%86%E6%B5%81/#fn:4">APNs 是啥，APNs 又咋了？</a></p>
-<p>给出一<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/m/apns">模块</a>用于代理 APNs 流量。</p>
-<h2 id="_1">编辑参数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>给出一<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/m/apns">模块</a>解决 APNs 的问题。</p>
+<h2 id="_1">测试<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>测试软件：太鼓。</p>
+<p>测试环境：始终连接 + 睡眠时断开。<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/c/p">兜底代理配置</a>和<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/c/d">兜底直连配置</a>。模块的“apnS”填写“PROXY”并使用稳定低延迟的节点。分别测试太鼓不在前台但设备未息屏、以及息屏后静置半分钟的状态。</p>
+<p>测试结果图鉴：
+- “✔”表示息屏与否都能收到消息；
+- “❌”表示息屏与否都不能收到消息；
+- “⚠”表示息屏时收不到但不息屏时可以。引起该现象的原因可能是兜底直连 + 睡眠时断开。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">“配置”兜底</th>
+<th style="text-align: left;">蜂窝/Wi-Fi</th>
+<th style="text-align: left;">是否开启模块</th>
+<th style="text-align: left;">是否开启“包含 APNs”</th>
+<th style="text-align: left;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">代理</td>
+<td style="text-align: left;">蜂窝</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">✔</td>
+<td style="text-align: left;">代理</td>
+<td style="text-align: left;">Wi-Fi</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">这种情况不管国内外通知都几乎没有延迟</td>
+</tr>
+<tr>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">蜂窝</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">证明蜂窝网络下该选项是刚需</td>
+</tr>
+<tr>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;">直连</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">证明……模块的必需？</td>
+</tr>
+<tr>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;">直连</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">是（-/N/-）</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">证明代理 <code>+.push.apple.com</code> 才是刚需</td>
+</tr>
+<tr>
+<td style="text-align: left;">⚠</td>
+<td style="text-align: left;">直连</td>
+<td style="text-align: left;">Wi-Fi</td>
+<td style="text-align: left;">是（N/Y/Y）</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">模块的默认选项</td>
+</tr>
+<tr>
+<td style="text-align: left;">⚠</td>
+<td style="text-align: left;">直连</td>
+<td style="text-align: left;">蜂窝</td>
+<td style="text-align: left;">是（N/Y/Y）</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">⚠</td>
+<td style="text-align: left;">直连</td>
+<td style="text-align: left;">Wi-Fi</td>
+<td style="text-align: left;">是（N/Y/N）</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">不代理 IP 段</td>
+</tr>
+<tr>
+<td style="text-align: left;">⚠</td>
+<td style="text-align: left;">直连</td>
+<td style="text-align: left;">蜂窝</td>
+<td style="text-align: left;">是（N/Y/N）</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">⚠</td>
+<td style="text-align: left;">直连</td>
+<td style="text-align: left;">Wi-Fi</td>
+<td style="text-align: left;">是（Y/Y/N）</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">有点延迟，容易吞消息。下同</td>
+</tr>
+<tr>
+<td style="text-align: left;">⚠</td>
+<td style="text-align: left;">直连</td>
+<td style="text-align: left;">蜂窝</td>
+<td style="text-align: left;">是（Y/Y/N）</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">⚠</td>
+<td style="text-align: left;">直连</td>
+<td style="text-align: left;">Wi-Fi</td>
+<td style="text-align: left;">是（Y/Y/Y）</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">⚠</td>
+<td style="text-align: left;">直连</td>
+<td style="text-align: left;">蜂窝</td>
+<td style="text-align: left;">是（Y/Y/Y）</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">编辑参数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="apns_1">apnS<a class="headerlink" href="#apns_1" title="Permanent link">&para;</a></h3>
 <p>可填入一个或多个代理节点或分组的名称，每个节点或分组之间用英文逗号分隔。不填则使用缺省值 <code>PROXY,DIRECT</code>，建议填写一个或多个稳定、低延迟的节点，然后在末尾填写 <code>DIRECT</code>。</p>
 <blockquote>
@@ -3629,7 +3795,7 @@
 </blockquote>
 <h3 id="init-01stpushapplecom">init-?01st.push.apple.com<a class="headerlink" href="#init-01stpushapplecom" title="Permanent link">&para;</a></h3>
 <p>是否代理 <code>DOMAIN-WILDCARD,init-?01st.push.apple.com</code>。默认关闭（开启表示代理，关闭以切换到直连。下同）。</p>
-<p>在用于<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/c/p">兜底代理</a>的 <a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/refs/heads/release/direct.txt">D 规则集</a>中存在两条直连规则</p>
+<p>在兜底代理配置的 <a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/refs/heads/release/direct.txt">D 规则集</a>中存在两条直连规则</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">payload</span><span class="p">:</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;init-p01st.push.apple.com&#39;</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;init-s01st.push.apple.com&#39;</span>
@@ -3640,9 +3806,8 @@
 <h3 id="ips">IPs<a class="headerlink" href="#ips" title="Permanent link">&para;</a></h3>
 <p>是否代理 APNs 的 IP 段。默认开启。</p>
 <p>参考了 <a href="https://support.apple.com/en-us/102266#:~:text=assigned%20to%20Apple.-,If%20you,-can%27t%20allow%20access">Apple 的官方文档</a>，这里说明了 APNs 的 IP 段。</p>
-<h2 id="_2">原理和注意事项<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_3">原理和注意事项<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>模块的原理基于笔者对 APNs 屏蔽的技术原理的<em>猜测</em>：笔者<em>认为</em>，APNs 通过检测用户的 IP，再根据应用的 ID 来定向屏蔽消息推送。模块通过代理 APNs 的域名和 IP，让 APNs 服务器认为我们在境外，即和 APNs 服务器沟通的 IP 不是东大的。</p>
-<p><del>笔者也曾考虑过使用 MITM，在 APNs 直连的前提下欺骗服务器给我们发消息，但这与域前置等仅绕过审查不代理等用法的场景不同：那些场景是目的服务商没有主动屏蔽，而这个场景是 APNs 的主动屏蔽，因此必须代理。</del></p>
 <p>以下是使用模块时需要注意的点：</p>
 <ol>
 <li>
@@ -3655,6 +3820,8 @@
 <p>模块配置完成后，开启关闭飞行模式一次（这是网传的方法，目的是彻底关闭再开启一次箭箭火隧道）即可复活 APNs。</p>
 </li>
 </ol>
+<h2 id="_4">废稿待整理<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p><del>笔者也曾考虑过使用 MITM，在 APNs 直连的前提下欺骗服务器给我们发消息，但这与域前置等仅绕过审查不代理等用法的场景不同：那些场景是目的服务商没有主动屏蔽，而这个场景是 APNs 的主动屏蔽，因此必须代理。</del></p>
 <p><del>代理 APNs 会引发一些问题：假设 PROXY 组节点全挂了，那么 APNs 也挂了，国内 App 的消息也收不到；其次 APNs 挂代理本身就会增加延迟。还是建议关闭 iPhone 对应 App 的通知（或卸载它们。既然 Apple 会主动屏蔽这些软件的 APNs，就有理由怀疑它会和 GFW 分享哪些设备在使用这些软件），使用其他设备接收信息吧（物理分流）。硬要用的话，还是参考<a href="../10.%E7%AE%AD%E7%AE%AD%E7%81%AB%2B%E6%8D%B7%E5%BE%91%EF%BC%9A%E6%8C%89%E5%BA%94%E7%94%A8%E5%88%86%E6%B5%81/">上一篇文章</a>结合应用分流使用比较合适。</del></p>
 
 
