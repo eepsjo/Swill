@@ -1,0 +1,5 @@
+mkdocs-material
+mkdocs-awesome-nav
+mkdocs-document-dates
+jieba
+ghp-import
