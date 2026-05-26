@@ -3626,29 +3626,44 @@
 
 
 <h1 id="apns">箭箭火复活 APNs<a class="headerlink" href="#apns" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260518'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-05-18T21:54:31+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260524'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-05-25T01:16:48+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260518'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-05-18T21:54:31+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260526'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-05-26T12:33:52+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
 
-<p><a href="../10.%E7%AE%AD%E7%AE%AD%E7%81%AB%2B%E6%8D%B7%E5%BE%91%EF%BC%9A%E6%8C%89%E5%BA%94%E7%94%A8%E5%88%86%E6%B5%81/#fn:4">APNs 是啥，APNs 又咋了？</a></p>
+<details class="quote">
+<summary>APNs 是啥，APNs 又咋了？</summary>
+<p><a href="../10.%E7%AE%AD%E7%AE%AD%E7%81%AB%2B%E6%8D%B7%E5%BE%91%EF%BC%9A%E6%8C%89%E5%BA%94%E7%94%A8%E5%88%86%E6%B5%81/#fn:4">箭箭火+捷徑：按应用分流 - 注释 4</a></p>
+</details>
 <p>给出一<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/m/apns">模块</a>解决 APNs 的问题。</p>
 <h2 id="_1">测试<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>测试软件：【认知过滤器启动】。</p>
-<p>测试环境：始终连接 + <strong>睡眠时断开</strong>。<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/c/p">兜底代理配置</a>和<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/c/d">兜底直连配置</a>。模块的“apnS”填写“PROXY”并使用稳定低延迟的节点。分别测试【认知过滤器启动】不在前台但设备未息屏、以及息屏后静置半分钟的状态。</p>
+<p>测试环境：</p>
+<ol>
+<li>
+<p>始终连接 + <strong>睡眠时断开</strong>；</p>
+</li>
+<li>
+<p>使用<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/c/p">兜底代理配置</a>和<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/c/d">兜底直连配置</a>；</p>
+</li>
+<li>
+<p>模块“编辑参数”使用默认值，并在箭箭火主页选择延迟低速度快的节点。</p>
+</li>
+</ol>
+<p>分别测试【认知过滤器启动】后台已杀但设备未息屏、以及息屏后静置两分钟后的状态。</p>
 <p>测试结果图鉴：</p>
 <ul>
 <li>
-<p>“✔”表示息屏与否都能收到消息；</p>
+<p>“✅”表示息屏与否都能收到消息；</p>
 </li>
 <li>
 <p>“❌”表示息屏与否都不能收到消息；</p>
 </li>
 <li>
-<p>“⚠”表示息屏时收不到但不息屏时可以。</p>
+<p>“⚠️”表示息屏时收不到但不息屏时可以。</p>
 </li>
 </ul>
+<p>测试结果：</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;"></th>
+<th style="text-align: left;">图鉴</th>
 <th style="text-align: left;">“配置”兜底</th>
 <th style="text-align: left;">蜂窝/Wi-Fi</th>
 <th style="text-align: left;">是否开启模块</th>
@@ -3658,7 +3673,7 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">⚠</td>
+<td style="text-align: left;">⚠️</td>
 <td style="text-align: left;">代理</td>
 <td style="text-align: left;">蜂窝</td>
 <td style="text-align: left;">-</td>
@@ -3666,7 +3681,7 @@
 <td style="text-align: left;"></td>
 </tr>
 <tr>
-<td style="text-align: left;">✔</td>
+<td style="text-align: left;">✅</td>
 <td style="text-align: left;">代理</td>
 <td style="text-align: left;">Wi-Fi</td>
 <td style="text-align: left;">-</td>
@@ -3698,7 +3713,7 @@
 <td style="text-align: left;">证明代理 <code>+.push.apple.com</code> 才是刚需</td>
 </tr>
 <tr>
-<td style="text-align: left;">⚠</td>
+<td style="text-align: left;">⚠️</td>
 <td style="text-align: left;">直连</td>
 <td style="text-align: left;">Wi-Fi</td>
 <td style="text-align: left;">是（N/Y/Y）</td>
@@ -3706,7 +3721,7 @@
 <td style="text-align: left;">模块的默认选项</td>
 </tr>
 <tr>
-<td style="text-align: left;">⚠</td>
+<td style="text-align: left;">⚠️</td>
 <td style="text-align: left;">直连</td>
 <td style="text-align: left;">蜂窝</td>
 <td style="text-align: left;">是（N/Y/Y）</td>
@@ -3714,7 +3729,7 @@
 <td style="text-align: left;"></td>
 </tr>
 <tr>
-<td style="text-align: left;">⚠</td>
+<td style="text-align: left;">⚠️</td>
 <td style="text-align: left;">直连</td>
 <td style="text-align: left;">Wi-Fi</td>
 <td style="text-align: left;">是（N/Y/N）</td>
@@ -3722,7 +3737,7 @@
 <td style="text-align: left;">不代理 IP 段</td>
 </tr>
 <tr>
-<td style="text-align: left;">⚠</td>
+<td style="text-align: left;">⚠️</td>
 <td style="text-align: left;">直连</td>
 <td style="text-align: left;">蜂窝</td>
 <td style="text-align: left;">是（N/Y/N）</td>
@@ -3730,7 +3745,7 @@
 <td style="text-align: left;"></td>
 </tr>
 <tr>
-<td style="text-align: left;">⚠</td>
+<td style="text-align: left;">⚠️</td>
 <td style="text-align: left;">直连</td>
 <td style="text-align: left;">Wi-Fi</td>
 <td style="text-align: left;">是（Y/Y/Y）</td>
@@ -3738,7 +3753,7 @@
 <td style="text-align: left;">有点延迟，容易吞消息。下同</td>
 </tr>
 <tr>
-<td style="text-align: left;">⚠</td>
+<td style="text-align: left;">⚠️</td>
 <td style="text-align: left;">直连</td>
 <td style="text-align: left;">蜂窝</td>
 <td style="text-align: left;">是（Y/Y/Y）</td>
@@ -3746,7 +3761,7 @@
 <td style="text-align: left;"></td>
 </tr>
 <tr>
-<td style="text-align: left;">⚠</td>
+<td style="text-align: left;">⚠️</td>
 <td style="text-align: left;">直连</td>
 <td style="text-align: left;">Wi-Fi</td>
 <td style="text-align: left;">是（Y/Y/N）</td>
@@ -3754,7 +3769,7 @@
 <td style="text-align: left;"></td>
 </tr>
 <tr>
-<td style="text-align: left;">⚠</td>
+<td style="text-align: left;">⚠️</td>
 <td style="text-align: left;">直连</td>
 <td style="text-align: left;">蜂窝</td>
 <td style="text-align: left;">是（Y/Y/N）</td>
@@ -3763,26 +3778,28 @@
 </tr>
 </tbody>
 </table>
-<p>结论：<strong>该方案并不完美</strong>，在纯 Wi-Fi 环境下可以正常使用，在蜂窝网络环境下需要开启“包含 APNs”选项才能正常使用；且极度依赖节点的稳定性和延迟。</p>
+<p>结论：<strong>该方案并不完美，因为它极度依赖节点的稳定性和低延迟</strong>，且蜂窝网络环境下必须开启“包含 APNs”选项才能正常使用。</p>
 <h2 id="_2">模块“编辑参数”<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="mode-url-test-fallback">mode &amp; url-test &amp; fallback<a class="headerlink" href="#mode-url-test-fallback" title="Permanent link">&para;</a></h3>
-<p><code>mode</code> 可选值有 <code>url-test</code> 和 <code>fallback</code>，默认 <code>fallback</code>。</p>
+<p><code>mode</code> 可选值有 <code>url-test</code> 和 <code>fallback</code>，需要手动填写完整键值，代表模块将以那种模式代理 APNs 流量。缺省值 <code>fallback</code>。</p>
 <p><code>url-test</code> 中可填入一个或多个代理节点或分组的名称，每个节点或分组之间用英文逗号分隔。这些节点将进行 URL 测试，测试结果最好的节点将被用来代理 APNs。不填则使用缺省值 <code>PROXY</code>。建议填写一个或多个稳定、低延迟的节点。</p>
 <p><code>fallback</code> 可填入一个或多个代理节点或分组的名称，每个节点或分组之间用英文逗号分隔。这些节点将在 <code>url-test</code> 中的节点都不可用时被使用。不填则使用缺省值 <code>DIRECT</code>，也建议使用缺省值。</p>
 <blockquote>
 <p>手动指定固定的节点，目的是防止切换配置时/代理组切换节点时打断 APNs 长连接导致信息接收延迟。<br>直连作为回落兜底防止节点全部超时导致 APNs 完全失效（至少直连时不需要绕过 APNs 屏蔽的应用还能收到消息）。</p>
 </blockquote>
 <h3 id="interval-tolerance-timeout-url">interval &amp; tolerance &amp; timeout &amp; url<a class="headerlink" href="#interval-tolerance-timeout-url" title="Permanent link">&para;</a></h3>
-<p>上述模式的测试用参数，具体用法参照<a href="https://lowertop.github.io/Shadowrocket/">箭箭火使用文档</a>。</p>
+<p>上述模式参数，一般不需要手动设置。具体用法参照<a href="https://lowertop.github.io/Shadowrocket/">箭箭火使用文档</a>。</p>
 <h3 id="init-01stpushapplecom">init-?01st.push.apple.com<a class="headerlink" href="#init-01stpushapplecom" title="Permanent link">&para;</a></h3>
 <p>是否代理 <code>DOMAIN-WILDCARD,init-?01st.push.apple.com</code>。默认关闭（开启表示代理，关闭以切换到直连。下同）。</p>
 <blockquote>
 <p>在兜底代理配置的 <a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/refs/heads/release/direct.txt">D 规则集</a>中存在两条直连规则</p>
 </blockquote>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">payload</span><span class="p">:</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;init-p01st.push.apple.com&#39;</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;init-s01st.push.apple.com&#39;</span>
-</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>``` yaml
+payload:
+  - &#39;init-p01st.push.apple.com&#39;
+  - &#39;init-s01st.push.apple.com&#39;
+```
+</code></pre></div>
 <blockquote>
 <p>与下一条参数冲突，故创建此选项让用户自行定夺。</p>
 </blockquote>
