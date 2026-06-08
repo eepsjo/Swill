@@ -3650,7 +3650,7 @@
 
 
 <h1 id="apns">箭箭火模块复活 APNs 的尝试<a class="headerlink" href="#apns" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260526'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-05-26T12:00:00+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260608'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-06-08T19:53:45+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260526'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-05-26T12:00:00+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260608'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-06-08T19:57:41+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
 
 <p>给出一<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/m/apns">模块</a>解决 <a href="../10.%E7%AE%AD%E7%AE%AD%E7%81%AB%2B%E6%8D%B7%E5%BE%91%EF%BC%9A%E6%8C%89%E5%BA%94%E7%94%A8%E5%88%86%E6%B5%81/#fn:4">APNs 的问题</a>。</p>
 <h2 id="_1">写在前面<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
@@ -3660,7 +3660,7 @@
 <li>
 <p>确保箭箭火隧道始终开启的情况下，使用<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/c/p">兜底代理配置</a>时默认 APNs 就是正常状态，不需要使用模块复活；</p>
 <blockquote>
-<p>兜底代理配置中没有规定 APNs 相关域名/IP 直连，<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/c/d">兜底直连</a>中也没有规定它们代理。模块本身不强制 APNs 代理，提供了丰富的可编辑参数（见下文），只是默认行为同兜底代理。</p>
+<p>兜底代理配置中没有规定 APNs 相关域名/IP 直连，<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/c/d">兜底直连配置</a>中也没有规定它们代理。模块本身不强制 APNs 代理，提供了丰富的可编辑参数（见下文），只是默认行为同兜底代理。</p>
 </blockquote>
 </li>
 <li>
@@ -3668,9 +3668,9 @@
 <blockquote>
 <p><span class="arithmatex">\(设置 \to 隧道 \to 包括所有网络 with 包括 APNs\)</span></p>
 </blockquote>
+<p>才能复活 APNs。Wi-Fi 不受影响（即不插卡的设备不需要）。</p>
 </li>
 </ol>
-<p>才能复活 APNs。Wi-Fi 不受影响（即不插卡的设备不需要）。</p>
 <h2 id="_2">编辑参数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="mode-url-test-fallback">mode &amp; url-test &amp; fallback<a class="headerlink" href="#mode-url-test-fallback" title="Permanent link">&para;</a></h3>
 <p><code>mode</code> 可选值有 <code>url-test</code> 和 <code>fallback</code>，需要手动填写完整键值，代表模块将以那种模式代理 APNs 流量。缺省值 <code>fallback</code>。</p>
@@ -3684,15 +3684,12 @@
 <h3 id="init-01stpushapplecom">init-?01st.push.apple.com<a class="headerlink" href="#init-01stpushapplecom" title="Permanent link">&para;</a></h3>
 <p>是否代理 <code>DOMAIN-WILDCARD,init-?01st.push.apple.com</code>。默认关闭（开启表示代理，关闭以切换到直连。下同）。</p>
 <blockquote>
-<p>在兜底代理配置的 <a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/refs/heads/release/direct.txt">D 规则集</a>中存在两条直连规则</p>
+<p>在兜底代理配置的 <a href="https://raw.githubusercontent.com/Loyalsoldier/clash-rules/refs/heads/release/direct.txt">D 规则集</a>中存在两条直连规则与下一条参数冲突，故创建此选项让用户自行定夺。</p>
 </blockquote>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">payload</span><span class="p">:</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;init-p01st.push.apple.com&#39;</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;init-s01st.push.apple.com&#39;</span>
 </span></code></pre></div>
-<blockquote>
-<p>与下一条参数冲突，故创建此选项让用户自行定夺。</p>
-</blockquote>
 <h3 id="pushapplecom">+.push.apple.com<a class="headerlink" href="#pushapplecom" title="Permanent link">&para;</a></h3>
 <p>是否代理 <code>DOMAIN-SUFFIX,push.apple.com</code>。默认开启。</p>
 <h3 id="ips">IPs<a class="headerlink" href="#ips" title="Permanent link">&para;</a></h3>
