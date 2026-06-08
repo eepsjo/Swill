@@ -3650,24 +3650,26 @@
 
 
 <h1 id="apns">箭箭火模块复活 APNs 的尝试<a class="headerlink" href="#apns" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260526'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-05-26T12:00:00+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260608'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-06-08T19:45:39+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260526'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-05-26T12:00:00+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260608'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-06-08T19:49:37+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
 
 <p>给出一<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/m/apns">模块</a>解决 <a href="../10.%E7%AE%AD%E7%AE%AD%E7%81%AB%2B%E6%8D%B7%E5%BE%91%EF%BC%9A%E6%8C%89%E5%BA%94%E7%94%A8%E5%88%86%E6%B5%81/#fn:4">APNs 的问题</a>。</p>
 <h2 id="_1">写在前面<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>模块的工作原理和实现，基于笔者对 APNs 屏蔽的技术原理的<em>猜测</em>：<em>笔者认为，APNs 直接通过 APNs 连接检测用户的 IP 来确定用户是否在墙内，以此屏蔽指定应用的消息推送。</em>因此让 APNs 服务器认为我们在境外就能复活 APNs。</p>
 <p>实测发现使用模块时的两个注意点。</p>
 <ol>
-<li>确保箭箭火隧道始终开启的情况下，使用<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/c/p">兜底代理配置</a>时默认 APNs 就是正常状态，不需要使用模块复活；</li>
-</ol>
+<li>
+<p>确保箭箭火隧道始终开启的情况下，使用<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/c/p">兜底代理配置</a>时默认 APNs 就是正常状态，不需要使用模块复活；</p>
 <blockquote>
 <p>兜底代理配置中没有规定 APNs 相关域名/IP 直连，<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/c/d">兜底直连</a>中也没有规定它们代理。模块本身不强制 APNs 代理，提供了丰富的可编辑参数（见下文），只是默认行为同兜底代理。</p>
 </blockquote>
-<ol>
-<li>部分运营商使用 SIM 卡的蜂窝数据时，需要开启箭箭火的</li>
-</ol>
+</li>
+<li>
+<p>部分运营商使用 SIM 卡的蜂窝数据时，需要开启箭箭火的</p>
 <blockquote>
-<p><span class="arithmatex">\(“设置” \to “隧道” \to “包括所有网络” &amp; “包括 APNs”\)</span></p>
+<p><span class="arithmatex">\(“设置” \to “隧道” \to “包括所有网络 &amp; 包括 APNs”\)</span></p>
 </blockquote>
+</li>
+</ol>
 <p>才能复活 APNs。Wi-Fi 不受影响（即不插卡的设备不需要）。</p>
 <h2 id="_2">编辑参数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="mode-url-test-fallback">mode &amp; url-test &amp; fallback<a class="headerlink" href="#mode-url-test-fallback" title="Permanent link">&para;</a></h3>
