@@ -1728,14 +1728,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../7.%E8%AE%B0%E4%B8%80%E6%AC%A1%E2%80%9C%E5%AE%98%E4%B8%AD%E6%B2%A1%E6%9C%89%20R18%E2%80%9D%E5%BC%95%E5%8F%91%E7%9A%84%E6%83%A8%E6%A1%88/" class="md-nav__link">
+      <a href="../7.%E8%AE%B0%E4%B8%80%E6%AC%A1%E2%80%9C%E6%B2%A1%E6%9C%89%20R18%E2%80%9D%E5%BC%95%E5%8F%91%E7%9A%84%E4%BA%8B%E4%BB%B6/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    记一次“官中没有 R18”引发的惨案
+    记一次“没有 R18”引发的事件
   
 
     
@@ -3510,7 +3510,7 @@
 
 
 <h1 id="hyper-v">双咪猫 Hyper-V 联网<a class="headerlink" href="#hyper-v" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260422'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-04-22T12:00:00+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260616'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-06-16T21:02:18+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260422'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-04-22T12:00:00+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260621'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-06-21T17:22:05+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='../../../assets/avatar/Espejo.png' data-email='' /></div></div></div></div></div>
 
 <blockquote>
 <p>核心思路：宿主机开启 <code>allow-lan</code>，配置 <code>mixed-port</code> 和代理鉴权；虚拟机 mihomo 全局模式，通过 socks 代理路由到宿主机虚拟网卡（hyper-v 的 defalut-interface，不是 tun）。</p>
@@ -3566,7 +3566,8 @@
 </span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="nv">GLOBAL</span><span class="p p-Indicator">,</span><span class="nt"> type</span><span class="p">:</span><span class="w"> </span><span class="nv">select</span><span class="p p-Indicator">,</span><span class="nt"> proxies</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">PROXY</span><span class="p p-Indicator">],</span><span class="nt"> hidden</span><span class="p">:</span><span class="w"> </span><span class="nv">true</span><span class="p p-Indicator">}</span>
 </span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>
 </span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="nt">rules</span><span class="p">:</span>
-</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MATCH,PROXY</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AND,((NETWORK,UDP),(DST-PORT,443)),REJECT</span>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MATCH,PROXY</span>
 </span></code></pre></div>
 <p>用于动态获取网关 IP 并写入同目录下 config 的 PowerShell 脚本：</p>
 <blockquote>
@@ -3592,7 +3593,7 @@
 </span></code></pre></div>
 <p>启动脚本：</p>
 <blockquote>
-<p>只是多了一行启动 ps1 然后判断<strong>真假？！</strong> 的逻辑。vbs 必须用任务计划程序才能以管理员启动喔。</p>
+<p>只是多了一行启动 ps1 然后判断<strong>真假？！</strong> 的逻辑。<br>vbs 必须用任务计划程序才能以管理员启动喔。</p>
 </blockquote>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Set shell = CreateObject(&quot;WScript.Shell&quot;)
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>shell.Run &quot;powershell.exe -ExecutionPolicy Bypass -File .\server.ps1&quot;, 0, True
