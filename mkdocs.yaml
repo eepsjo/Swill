@@ -9,14 +9,14 @@ theme:
   palette: 
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: cyan
-      accent: cyan
+      primary: pink
+      accent: pink
       toggle:
         icon: material/brightness-4
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: teal
-      accent: teal
+      primary: pink
+      accent: pink
       toggle:
         icon: material/brightness-7
   features:
