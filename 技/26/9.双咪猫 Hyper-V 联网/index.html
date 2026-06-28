@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://eepsjo.github.io/Swill/%E6%8A%80/26/9.%E5%8F%8C%E5%92%AA%E7%8C%AB%20Hyper-V%20%E8%81%94%E7%BD%91/">
       
       
-        <link rel="prev" href="../10.%E7%AE%AD%E7%AE%AD%E7%81%AB%2B%E6%8D%B7%E5%BE%91%EF%BC%9A%E6%8C%89%E5%BA%94%E7%94%A8%E5%88%86%E6%B5%81/">
+        <link rel="prev" href="../10.%E7%AE%AD%E7%AE%AD%E7%81%AB%20%2B%20%E6%8D%B7%E5%BE%91%EF%BC%9A%E6%8C%89%E5%BA%94%E7%94%A8%E5%88%86%E6%B5%81/">
       
       
         <link rel="next" href="../8.%E6%B5%85%E8%B0%88%E7%BA%A6%E6%9D%9F%E5%B7%A5%E7%A8%8B/">
@@ -555,14 +555,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../13.Playnite%20%E8%BD%BB%E6%9D%BE%E5%90%AF%E5%8A%A8%E4%B8%AD%E4%BA%8C%E7%90%86%E7%A7%91/" class="md-nav__link">
+      <a href="../13.Playnite%20X-VERSE-X/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Playnite 轻松启动中二理科
+    Playnite X-VERSE-X
   
 
     
@@ -639,14 +639,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../10.%E7%AE%AD%E7%AE%AD%E7%81%AB%2B%E6%8D%B7%E5%BE%91%EF%BC%9A%E6%8C%89%E5%BA%94%E7%94%A8%E5%88%86%E6%B5%81/" class="md-nav__link">
+      <a href="../10.%E7%AE%AD%E7%AE%AD%E7%81%AB%20%2B%20%E6%8D%B7%E5%BE%91%EF%BC%9A%E6%8C%89%E5%BA%94%E7%94%A8%E5%88%86%E6%B5%81/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    箭箭火+捷徑：按应用分流
+    箭箭火 + 捷徑：按应用分流
   
 
     
@@ -3294,7 +3294,7 @@
 
 
 <h1 id="hyper-v">双咪猫 Hyper-V 联网<a class="headerlink" href="#hyper-v" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260422'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-04-22T12:00:00+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260627'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-06-27T11:59:09+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='<a href="https://getajobng.com/" target="_blank">Espejo</a>'><span class='avatar-text'></span><img class='avatar' data-src='https://avatars.githubusercontent.com/u/99065471' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260422'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-04-22T12:00:00+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260628'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-06-28T19:03:49+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='<a href="https://getajobng.com/" target="_blank">Espejo</a>'><span class='avatar-text'></span><img class='avatar' data-src='https://avatars.githubusercontent.com/u/99065471' data-email='' /></div></div></div></div></div>
 
 <blockquote>
 <p>核心思路：宿主机开启 <code>allow-lan</code>，配置 <code>mixed-port</code> 和代理鉴权；虚拟机 mihomo 全局模式，通过 socks 代理路由到宿主机虚拟网卡（hyper-v 的 defalut-interface，不是 tun）。</p>
@@ -3365,9 +3365,9 @@
 <blockquote>
 <p>只是多了一行启动 ps1 然后判断<strong>真假？！</strong> 的逻辑。<br>vbs 必须用任务计划程序才能以管理员启动喔。</p>
 </blockquote>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Set shell = CreateObject(&quot;WScript.Shell&quot;)
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>shell.Run &quot;powershell.exe -ExecutionPolicy Bypass -File .\server.ps1&quot;, 0, True
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>shell.Run &quot;.\mihomo【的名字】.exe -d .\&quot;, 0
+<div class="language-vbscript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">Set</span><span class="w"> </span><span class="n">shell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">CreateObject</span><span class="p">(</span><span class="s2">&quot;WScript.Shell&quot;</span><span class="p">)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">shell</span><span class="p">.</span><span class="n">Run</span><span class="w"> </span><span class="s2">&quot;powershell.exe -ExecutionPolicy Bypass -File .\server.ps1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="no">True</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">shell</span><span class="p">.</span><span class="n">Run</span><span class="w"> </span><span class="s2">&quot;.\mihomo【的名字】.exe -d .\&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span>
 </span></code></pre></div>
 
 
