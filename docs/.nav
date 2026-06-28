@@ -6,3 +6,4 @@ nav:
   - 录
 sort:
   direction: desc
+  sections: mixed
