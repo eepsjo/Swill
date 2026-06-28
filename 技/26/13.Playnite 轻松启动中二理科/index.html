@@ -3703,15 +3703,11 @@
 
 
 <h1 id="playnite">Playnite 轻松启动中二理科<a class="headerlink" href="#playnite" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260621'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-06-21T16:54:48+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260628'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-06-28T10:12:36+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='https://avatars.githubusercontent.com/u/99065471' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260621'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-06-21T16:54:48+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260628'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-06-28T10:16:55+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='Espejo'><span class='avatar-text'></span><img class='avatar' data-src='https://avatars.githubusercontent.com/u/99065471' data-email='' /></div></div></div></div></div>
 
 <details class="warning">
 <summary>TSD</summary>
 <p><strong>时效性内容警告</strong>。这意味着该项目可能需要以文档创建时间而非更新时间为参考基准；项目中引用的外部链接随时可能失效。请读者知悉。</p>
-</details>
-<details class="tip">
-<summary>WIP</summary>
-<p><strong>在制内容警告</strong>。这意味着该项目含有大量笔者正在测试的技术方法或尚未整理完全的思想理论。请读者知悉。</p>
 </details>
 <details class="bug">
 <summary>AAA</summary>
@@ -3748,24 +3744,22 @@
 </div>
 <h2 id="_1">前置一：理科<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>前往 <a href="https://manual.evilleaker.com/games/chunithm/setup/">Evil Leaker 手册</a> 下载最新版本并遵循教程安装。由于原站不允许转载，这里给出简要流程归档：</p>
-<ol>
-<li><strong>安装 Windows 运行时库</strong>（如果后续游戏无法正常运行或你不确定系统环境是否符合游戏要求）：以管理员权限打开 PowerShell，运行 <code>irm https://get.msvc.win | iex</code></li>
-<li><strong>提取游戏 HDD（好弟弟）</strong>：用 7z 或系统自带挂载虚拟硬盘功能提取 vhd 文件中的游戏本体到指定路径，路径不要有空格、中文或特殊符号</li>
-</ol>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <p>游戏文件不可放置在 <code>E:\</code> 和 <code>Y:\</code> 盘符下（游戏代码限制）。</p>
 </div>
 <ol>
+<li><strong>安装 Windows 运行时库</strong>（如果后续游戏无法正常运行或你不确定系统环境是否符合游戏要求）：以管理员权限打开 PowerShell，运行 <code>irm https://get.msvc.win | iex</code></li>
+<li><strong>提取游戏 HDD（好弟弟）</strong>：用 7z 或系统自带挂载虚拟硬盘功能提取 vhd 文件中的游戏本体到指定路径，路径不要有空格、中文或特殊符号</li>
 <li><strong>覆盖解密文件</strong>：将 <code>chusanApp.exe</code> 和 <code>amdaemon.exe</code> 放入 <code>bin</code> 文件夹。如果后续有版本更新（如可选更新到 2.47 版本）需要在<a href="https://crew.evilleaker.com/">Evil Leaker 补丁站</a>给新 exe 重新打补丁</li>
 <li><strong>安装 option 包</strong>（A001~A251，删除曲补充包 A300）：解压到 <code>bin\option</code>，注意不要嵌套（正确路径如 <code>bin\option\A001\...</code>）</li>
 <li><strong>安装 segatools</strong>：下载 fufubot segatools，将所有文件复制到 <code>bin</code></li>
 <li><strong>安装 ICF</strong>：将 <code>ICF1</code> 和 <code>ICF2</code> 放入 <code>bin\amfs</code></li>
 </ol>
 <blockquote>
-<p>游戏版本：CHUNITHM X-VERSE-X (Version 2.45 → 2.47)
-游戏路径建议添加到 Windows Defender 排除项，可大幅加快启动自检速度
-音频设备必须使用 <code>48000Hz</code> 才能正确播放游戏声音</p>
+<p>游戏版本：CHUNITHM X-VERSE-X (Version 2.45 → 2.47)</p>
+<p>游戏路径建议添加到 Windows Defender 排除项，可大幅加快启动自检速度</p>
+<p>音频设备必须使用 <code>48000Hz</code> 才能正确播放游戏声音</p>
 </blockquote>
 <h2 id="_2">前置二：模拟服务器<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>中二需要 ALL.NET 实现联网功能。以下介绍三个公开模拟服务器。</p>
@@ -3781,8 +3775,7 @@
 <li>支持游戏：O.N.G.E.K.I. Re:Fresh、CHUNITHM NEWVerse、Maimai DX Prism Plus（全力支持）；Card Maker、CHUNITHM Paradise Lost、Project DIVA Arcade Future Tone（有限支持）</li>
 </ul>
 <blockquote>
-<p>官方声明：
-“我们不限制玩家下载/上传/修改自己的游戏档案，随意刷取所需道具，但手动修改游戏档案造成数据损坏时项目组概不负责，在修改时务必备份原档。另外，影响排行榜的行为可能会受到封禁。”</p>
+<p>官方声明：“我们不限制玩家下载/上传/修改自己的游戏档案，随意刷取所需道具，但手动修改游戏档案造成数据损坏时项目组概不负责，在修改时务必备份原档。另外，影响排行榜的行为可能会受到封禁。”</p>
 </blockquote>
 <ul>
 <li><strong>使用心得</strong>：可以用来编辑解锁收藏品后导出数据，然后导入 Aqua（Aqua 不支持解锁收藏品）。<strong>不能自定义队伍名字</strong>。目前已支持全国对战。</li>
@@ -3816,7 +3809,7 @@
 <p class="admonition-title">注意</p>
 <p><strong>编辑 segatools.ini 时应当只修改相关键值</strong>，或参考 <a href="https://unreal-network.tech/docs/arcade/segatools/">Unreal Network 教程</a> 操作。不要使用 Word/WPS 等富文本编辑器。keychip 格式：<code>A000-01234567890</code>。</p>
 </div>
-<p>下文的“启动前脚本”可以根据你的选择自动注释/取消注释对应行来切换服务器。</p>
+<p>下文的<a href="#_4">启动前脚本</a>可以根据你的选择自动注释/取消注释对应行来切换服务器。</p>
 <h2 id="brokenithm">前置三：Brokenithm<a class="headerlink" href="#brokenithm" title="Permanent link">&para;</a></h2>
 <p>Brokenithm 是一款将 iOS 设备变为中二手台的软件，让你用 iPad/iPhone 的触摸屏代替手台。</p>
 <h3 id="ios">iOS 客户端<a class="headerlink" href="#ios" title="Permanent link">&para;</a></h3>
