@@ -1,7 +1,7 @@
-site_name: 数字泔水
+site_name: 找个班上吧
 site_author: eepsjo
 site_url: https://eepsjo.github.io/Swill/
-copyright: '&copy; 23-26 Espejo'
+copyright: '&copy; 你妈出生至今 - Espejo'
 
 theme:
   language: zh
@@ -70,5 +70,6 @@ extra:
     filename: null
 
 extra_javascript:
-  - assets/dune_quote/1.js
+  # - assets/0quote/dune.js
+  - assets/0quote/kanna.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
