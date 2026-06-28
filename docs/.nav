@@ -1,7 +1,8 @@
 nav:
-  - 文
   - 技
+  - 文
   - 随
-  - 《器囚志》
   - 杂
   - 录
+sort:
+  direction: desc
