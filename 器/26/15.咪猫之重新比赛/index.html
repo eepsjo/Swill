@@ -3318,7 +3318,7 @@
 
 
 <h1 id="_1">咪猫之重新比赛<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260709'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-07-09T23:28:18+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260709'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-07-09T23:28:18+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='<a href="https://getajobng.com/" target="_blank">Espejo</a>'><span class='avatar-text'></span><img class='avatar' data-src='https://avatars.githubusercontent.com/u/99065471' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260709'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-07-09T23:28:18+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260709'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-07-09T23:32:10+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='<a href="https://getajobng.com/" target="_blank">Espejo</a>'><span class='avatar-text'></span><img class='avatar' data-src='https://avatars.githubusercontent.com/u/99065471' data-email='' /></div></div></div></div></div>
 
 <blockquote>
 <p><a href="https://wiki.metacubex.one/config/proxies/rematch/">重新比赛</a>是<a href="https://github.com/MetaCubeX/mihomo/releases/tag/v1.19.28">咪猫 1.19.28</a> 的新特性（出站）。本文通过两个示例简单分析这个出站的用法。</p>
@@ -3375,44 +3375,47 @@
 <blockquote>
 <p>实际上我写完才发现完全不用这么复杂，真想一键切换直接把所有规则都写好然后决定 <code>MATCH</code> 的分流就行，但这么做不能很好决定不同兜底的规则触发顺序。<code>rematch</code> 则可以做到特定兜底只匹配特定规则。</p>
 </blockquote>
-<p>```yaml
-proxy-groups:
-  - {name: 节点}
-  #
-  - {name: MATCH, type: select, proxies: [D, P]}
-  #
-  - {name: GLOBAL, type: select, proxies: [PROXY], hidden: true}
-  - {name: PROXY, type: select, proxies: [节点]}</p>
-<p>rules:
-  # 下面四个是不管什么兜底都要加载的规则
-  # 事实上 d 和 p 谁先触发也有讲究，真正可以在 REMATCH-NAME 之前触发的应该只有 R 和 r。这里简化处理
-  - RULE-SET,R,REJECT
-  - RULE-SET,r,REJECT
-  - RULE-SET,d,DIRECT
-  - RULE-SET,p,PbQ
-  # 第一轮规则匹配时，这里会直接跳转到最下面的 MATCH
-  # 如果 MATCH 组选择了 D（兜底直连）。第二轮可以看作从这里开始匹配，下同
-  - AND,((REMATCH-NAME,d),(RULE-SET,T)),PbQ
-  - AND,((REMATCH-NAME,d),(RULE-SET,G)),PbQ
-  # 第二轮匹配的终点，相当于 MATCH。下同
-  - REMATCH-NAME,d,DIRECT
-  # 如果 MATCH 组选择了 P（兜底代理）
-  - AND,((REMATCH-NAME,p),(RULE-SET,D)),DIRECT
-  # ⚠️
-  - AND,((REMATCH-NAME,p),(RULE-SET,I)),DnR
-  - REMATCH-NAME,p,PbQ
-  # 第一轮匹配的终点，到这里的流量都会因为 MATCH 组流入二轮
-  - MATCH,MATCH</p>
-<p>sub-rules:
-  PROXYblockQUIC: ['AND,((NETWORK,UDP),(DST-PORT,443)),REJECT', 'MATCH,PROXY']
-  # ⚠️
-  DIRECTnoResolve: ['MATCH,DIRECT,no-resolve']</p>
-<p>proxies:
-  - {name: D, type: rematch, target-rematch-name: "d"}
-  - {name: P, type: rematch, target-rematch-name: "p"}
-  - {name: PbQ, type: rematch, target-sub-rule: "PROXYblockQUIC"}
-  # ⚠️
-  - {name: DnR, type: rematch, target-sub-rule: "DIRECTnoResolve"}</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">proxy-groups</span><span class="p">:</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="nv">节点</span><span class="p p-Indicator">}</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="c1">#</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="nv">MATCH</span><span class="p p-Indicator">,</span><span class="nt"> type</span><span class="p">:</span><span class="w"> </span><span class="nv">select</span><span class="p p-Indicator">,</span><span class="nt"> proxies</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">D</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">P</span><span class="p p-Indicator">]}</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="c1">#</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="nv">GLOBAL</span><span class="p p-Indicator">,</span><span class="nt"> type</span><span class="p">:</span><span class="w"> </span><span class="nv">select</span><span class="p p-Indicator">,</span><span class="nt"> proxies</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">PROXY</span><span class="p p-Indicator">],</span><span class="nt"> hidden</span><span class="p">:</span><span class="w"> </span><span class="nv">true</span><span class="p p-Indicator">}</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="nv">PROXY</span><span class="p p-Indicator">,</span><span class="nt"> type</span><span class="p">:</span><span class="w"> </span><span class="nv">select</span><span class="p p-Indicator">,</span><span class="nt"> proxies</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">节点</span><span class="p p-Indicator">]}</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="nt">rules</span><span class="p">:</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="c1"># 下面四个是不管什么兜底都要加载的规则</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="c1"># 事实上 d 和 p 谁先触发也有讲究，真正可以在 REMATCH-NAME 之前触发的应该只有 R 和 r。这里简化处理</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RULE-SET,R,REJECT</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RULE-SET,r,REJECT</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RULE-SET,d,DIRECT</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RULE-SET,p,PbQ</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">  </span><span class="c1"># 第一轮规则匹配时，这里会直接跳转到最下面的 MATCH</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">  </span><span class="c1"># 如果 MATCH 组选择了 D（兜底直连）。第二轮可以看作从这里开始匹配，下同</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AND,((REMATCH-NAME,d),(RULE-SET,T)),PbQ</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AND,((REMATCH-NAME,d),(RULE-SET,G)),PbQ</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">  </span><span class="c1"># 第二轮匹配的终点，相当于 MATCH。下同</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">REMATCH-NAME,d,DIRECT</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">  </span><span class="c1"># 如果 MATCH 组选择了 P（兜底代理）</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AND,((REMATCH-NAME,p),(RULE-SET,D)),DIRECT</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">  </span><span class="c1"># ⚠️</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AND,((REMATCH-NAME,p),(RULE-SET,I)),DnR</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">REMATCH-NAME,p,PbQ</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">  </span><span class="c1"># 第一轮匹配的终点，到这里的流量都会因为 MATCH 组流入二轮</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MATCH,MATCH</span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="nt">sub-rules</span><span class="p">:</span>
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="w">  </span><span class="nt">PROXYblockQUIC</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;AND,((NETWORK,UDP),(DST-PORT,443)),REJECT&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;MATCH,PROXY&#39;</span><span class="p p-Indicator">]</span>
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="w">  </span><span class="c1"># ⚠️</span>
+</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="w">  </span><span class="nt">DIRECTnoResolve</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;MATCH,DIRECT,no-resolve&#39;</span><span class="p p-Indicator">]</span>
+</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>
+</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="nt">proxies</span><span class="p">:</span>
+</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="nv">D</span><span class="p p-Indicator">,</span><span class="nt"> type</span><span class="p">:</span><span class="w"> </span><span class="nv">rematch</span><span class="p p-Indicator">,</span><span class="nt"> target-rematch-name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;d&quot;</span><span class="p p-Indicator">}</span>
+</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="nv">P</span><span class="p p-Indicator">,</span><span class="nt"> type</span><span class="p">:</span><span class="w"> </span><span class="nv">rematch</span><span class="p p-Indicator">,</span><span class="nt"> target-rematch-name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p&quot;</span><span class="p p-Indicator">}</span>
+</span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="nv">PbQ</span><span class="p p-Indicator">,</span><span class="nt"> type</span><span class="p">:</span><span class="w"> </span><span class="nv">rematch</span><span class="p p-Indicator">,</span><span class="nt"> target-sub-rule</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;PROXYblockQUIC&quot;</span><span class="p p-Indicator">}</span>
+</span><span id="__span-3-39"><a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="w">  </span><span class="c1"># ⚠️</span>
+</span><span id="__span-3-40"><a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="nv">DnR</span><span class="p p-Indicator">,</span><span class="nt"> type</span><span class="p">:</span><span class="w"> </span><span class="nv">rematch</span><span class="p p-Indicator">,</span><span class="nt"> target-sub-rule</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;DIRECTnoResolve&quot;</span><span class="p p-Indicator">}</span>
+</span></code></pre></div>
 <div class="footnote">
 <hr />
 <ol>
