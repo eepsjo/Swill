@@ -3285,7 +3285,7 @@
 
 
 <h1 id="ca-2023-brokes-ventoy">CA 2023 brokes Ventoy<a class="headerlink" href="#ca-2023-brokes-ventoy" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260714'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-07-14T23:34:07+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260714'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-07-14T23:34:07+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='<a href="https://getajobng.com/" target="_blank">Espejo</a>'><span class='avatar-text'></span><img class='avatar' data-src='https://avatars.githubusercontent.com/u/99065471' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260714'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-07-14T23:34:07+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260715'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-07-15T09:32:39+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='<a href="https://getajobng.com/" target="_blank">Espejo</a>'><span class='avatar-text'></span><img class='avatar' data-src='https://avatars.githubusercontent.com/u/99065471' data-email='' /></div></div></div></div></div>
 
 <details class="tip">
 <summary>WIP</summary>
@@ -3295,8 +3295,8 @@
 <summary>AAA</summary>
 <p><strong>生成式内容警告</strong>。这意味着该项目含有由 AI/LLM 直接或间接生成的内容。请读者知悉。</p>
 </details>
-<p>在较新的主板<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>上使用新版 <a href="https://github.com/ventoy/Ventoy">Ventoy</a> 可能会在安全启动下出现 <code>Invalid Image</code> 错误，该错误导致无法弹出 MOK 界面进行 enroll、即使手动启动并在 MOK 界面手动选择 Hash 注册、使用 <code>VTOY_SECURE_BOOT_POLICY</code><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> 都提示文件非法。经检查<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>系新版固件强制引入 <strong>Microsoft UEFI CA 2023</strong> 证书并彻底废除<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup> <strong>Microsoft UEFI CA 2011</strong> 旧证书导致。</p>
-<p>需要注意的是，虽然最新版 Ventoy 采用了 Rocky Linux 的双签名 <code>shim</code>，但由于其内部仍携带已被主板 <code>dbx</code>（吊销列表）强制拉黑的 2011 证书特征或旧版 Shim 漏洞代码，新版固件会在硬件层直接拦截该文件的执行。最稳妥的安全闭环方案是保持 BIOS 密码保护，在使用 Ventoy 时手动暂时关闭安全启动<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>。</p>
+<p>在较新的主板<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>上使用新版 <a href="https://github.com/ventoy/Ventoy">Ventoy</a> 可能会在安全启动下出现 <code>Invalid Image</code> 错误，该错误导致无法弹出 MOK 界面进行 enroll、即使手动启动并在 MOK 界面手动选择 Hash 注册、使用 <code>VTOY_SECURE_BOOT_POLICY</code><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> 都提示文件非法。经检查系新版固件强制引入 <strong>Microsoft UEFI CA 2023</strong> 证书并彻底废除<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup> <strong>Microsoft UEFI CA 2011</strong> 旧证书导致。</p>
+<p>需要注意的是，虽然最新版 Ventoy 采用了 Rocky Linux 的双签名 <code>shim</code>，但由于其内部仍携带已被主板 <code>dbx</code>（吊销列表）强制拉黑的 2011 证书特征或旧版 Shim 漏洞代码，新版固件会在硬件层直接拦截该文件的执行。最稳妥的安全闭环方案是保持 BIOS 密码保护，在使用 Ventoy 时手动暂时关闭安全启动<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>。</p>
 <div class="footnote">
 <hr />
 <ol>
@@ -3307,25 +3307,7 @@
 <p>见 <a href="https://github.com/ventoy/Ventoy/issues/3639">Ventoy GitHub Issue #3639</a> 以及官方的 <a href="https://github.com/ventoy/Ventoy/blob/master/SecureBoot.md">SecureBoot.md</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
-<p>检查与尝试包括不限于：</p>
-<ul>
-<li>
-<p>重置 BIOS 设置</p>
-</li>
-<li>
-<p>在 BIOS 中执行“清除金钥”</p>
-</li>
-<li>
-<p>尝试通过 MOK Manager 手动浏览 U 盘 BOOT 文件夹下的 <code>.efi</code> 文件进行 Hash 注册以及注入 key</p>
-</li>
-<li>
-<p>检查 BIOS 中是否存在“第三方 UEFI CA”或“MS UEFI CA 2023”等证书细分信赖开关</p>
-</li>
-</ul>
-<p><a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
-</li>
-<li id="fn:4">
-<p>这种“物理级”主动清空并恢复默认金钥的行为，实际上帮助主板关闭了 2011 证书降级攻击的后门。配合 BIOS 密码，即使临时关闭安全启动，整机的硬件信任链依然处于极高规格的闭环保护下&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p>这种“物理级”主动清空并恢复默认金钥的行为，实际上帮助主板关闭了 2011 证书降级攻击的后门。配合 BIOS 密码，即使临时关闭安全启动，整机的硬件信任链依然处于极高规格的闭环保护下&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
