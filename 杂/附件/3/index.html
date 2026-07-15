@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S B X ⁴</title>
+  <meta name="description" content="立场沙盒 - 四维度版">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' https://cdn.plot.ly; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src https://api.deepseek.com https://api.openai.com https://api.groq.com https://api.x.ai https://dashscope.aliyuncs.com https://open.bigmodel.cn https://api.siliconflow.cn; img-src 'self' data:; frame-src 'none'; object-src 'none';">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>&#x1F9E0;</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;family=VT323&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"
+          integrity="sha384-cCVCZkAjYNxaYKbM8lsArLznDF/SvMFr1jcZrvOpSTCa0W40ZAdLzHCEulnUa5i7"
+          crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <h1>SBX<sup>4</sup></h1>
+    <div class="subtitle">立场沙盒 - 四维度版</div>
+  </div>
+  <div class="header-right">
+    <div class="motto-header" id="motto_header">
+      <span class="motto-text" id="motto_text"></span><span class="cursor" id="motto_cursor"></span>
+    </div>
+    <button class="settings-toggle" id="btn_toggle_settings">
+      API 配置 <span class="key-badge missing" id="key_status">未配置</span>
+    </button>
+  </div>
+</header>
+
+<main class="main">
+
+  <div class="top-row">
+
+    <section class="section sliders-section" id="sliders_section">
+      <div class="section-title">四维公理设定</div>
+      <div class="sliders-vertical">
+        <div class="slider-row">
+          <span class="slider-name-val"><span>q1 边界</span><span class="slider-val" id="q1_val">0.50</span></span>
+          <span class="pole pole-l">个体神圣</span>
+          <input type="range" id="q1" min="0.01" max="0.99" step="0.01" value="0.5">
+          <span class="pole pole-r">集体至上</span>
+        </div>
+        <div class="slider-row">
+          <span class="slider-name-val"><span>q2 序位</span><span class="slider-val" id="q2_val">0.50</span></span>
+          <span class="pole pole-l">绝对平权</span>
+          <input type="range" id="q2" min="0.01" max="0.99" step="0.01" value="0.5">
+          <span class="pole pole-r">天然阶层</span>
+        </div>
+        <div class="slider-row">
+          <span class="slider-name-val"><span>q3 归因</span><span class="slider-val" id="q3_val">0.50</span></span>
+          <span class="pole pole-l">环境决定</span>
+          <input type="range" id="q3" min="0.01" max="0.99" step="0.01" value="0.5">
+          <span class="pole pole-r">自由意志</span>
+        </div>
+        <div class="slider-row">
+          <span class="slider-name-val"><span>q4 时间</span><span class="slider-val" id="q4_val">0.50</span></span>
+          <span class="pole pole-l">保守存量</span>
+          <input type="range" id="q4" min="0.01" max="0.99" step="0.01" value="0.5">
+          <span class="pole pole-r">激进增量</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section proposition-section" id="input_section">
+      <div class="section-title-bar">
+        <span class="section-title-text">自然语言命题</span>
+        <span class="title-bar-btns">
+          <button class="btn btn-secondary btn-sm" id="btn_advanced">高级</button>
+          <button class="btn btn-primary btn-sm" id="btn_ai_parse">解析命题</button>
+        </span>
+      </div>
+      <textarea class="proposition-input" id="proposition" placeholder="使用不带个人主观情绪的肯定句，陈述一个社会议题或哲学论题，如“安乐死是合法的”。"></textarea>
+      <div class="loading hidden" id="loading">
+        <div class="spinner"></div>
+        <span>AI 正在解析命题语义…</span>
+      </div>
+      <div class="error hidden" id="error_msg"></div>
+    </section>
+
+  </div>
+
+  <div class="bottom-row">
+
+    <section class="section result-full" id="result_panel">
+      <div class="section-title">立场分析 <button class="chart-toggle btn-refresh-inline" id="btn_refresh">刷新</button></div>
+      <div class="result-layout">
+        <div class="result-left">
+          <div class="approval-ring-wrap" id="approval_ring_wrap">
+            <svg viewBox="0 0 120 120" class="approval-svg">
+              <circle cx="60" cy="60" r="52" class="ring-track"/>
+              <circle cx="60" cy="60" r="52" class="ring-fill" id="ring_fill"/>
+            </svg>
+            <div class="approval-inner">
+              <span class="approval-big" id="result_approval">--</span>
+              <span class="ring-hover-label" id="ring_hover_label"></span>
+            </div>
+          </div>
+          <div class="analysis-result hidden" id="analysis_result">
+            <div class="meta-prop" id="meta_prop"></div>
+            <div class="formula-row">
+              <span class="pie-wrap">
+                <svg viewBox="0 0 40 40" class="pie-svg" id="pie_svg">
+                  <circle cx="20" cy="20" r="16" class="pie-track"/>
+                  <circle cx="20" cy="20" r="16" class="pie-fill" id="pie_fill"/>
+                </svg>
+                <span class="pie-hover-label" id="pie_hover_label"></span>
+              </span>
+              <code class="formula-code" id="formula_code"></code>
+            </div>
+            <div class="profiles">
+              <div class="profile pro"><span class="profile-tag">支持者</span><span class="profile-desc" id="pro_profile"></span></div>
+              <div class="profile con"><span class="profile-tag">反对者</span><span class="profile-desc" id="con_profile"></span></div>
+            </div>
+          </div>
+          <div class="empty-hint" id="empty_hint">请先解析命题获取推导公式，再执行立场分析。</div>
+        </div>
+        <div class="result-right">
+          <div class="sensitivity-inline" id="sensitivity_inline">
+            <div class="sensitivity-controls">
+              <span id="sensitivity_dim_ctrls">
+                <select id="sensitivity_dim">
+                  <option value="0">q1 · 边界公理</option>
+                  <option value="1">q2 · 序位公理</option>
+                  <option value="2">q3 · 归因公理</option>
+                  <option value="3">q4 · 时间公理</option>
+                </select>
+              </span>
+              <span id="sensitivity_dim3d_ctrls">
+                <select id="sensitivity_dim_x">
+                  <option value="0">q1 · 边界公理</option>
+                  <option value="1">q2 · 序位公理</option>
+                  <option value="2">q3 · 归因公理</option>
+                  <option value="3" selected>q4 · 时间公理</option>
+                </select>
+                <select id="sensitivity_dim_y">
+                  <option value="0">q1 · 边界公理</option>
+                  <option value="1" selected>q2 · 序位公理</option>
+                  <option value="2">q3 · 归因公理</option>
+                  <option value="3">q4 · 时间公理</option>
+                </select>
+              </span>
+            </div>
+            <button class="chart-toggle" id="btn_chart_toggle">3D</button>
+            <div class="chart-container" id="sensitivity_chart"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="loading hidden" id="sensitivity_loading">
+    <div class="spinner"></div>
+    <span>正在网格搜索…</span>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <span class="footer-left">&#169; 26至今 - Espejo - 严禁转载</span>
+  <span class="footer-right">Vibecode with deepseek-v4-pro. Just for fun, do not take it seriously ;)</span>
+</footer>
+
+<div class="modal-overlay hidden" id="settings_modal">
+  <div class="modal">
+    <h3>API 配置</h3>
+    <label for="api_provider">API 提供商</label>
+    <select id="api_provider"></select>
+    <label for="api_model">模型名称</label>
+    <select id="api_model"></select>
+    <label for="api_key">API Key</label>
+    <input type="password" id="api_key" placeholder="sk-...">
+    <div class="note" id="api_note"></div>
+    <div class="btn-row">
+      <button class="btn btn-secondary" id="btn_close_settings">取消</button>
+      <button class="btn btn-primary" id="btn_save_key">保存</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay hidden" id="advanced_modal">
+  <div class="modal">
+    <h3>高级设置</h3>
+    <label for="adv_threshold">复杂度阈值</label>
+    <div class="adv-slider-row"><span class="adv-minmax">0</span><input type="range" id="adv_threshold" min="0" max="1" step="0.01" value="0.5"><span class="adv-minmax">1</span><span class="adv-cur" id="adv_threshold_val">0.50</span></div>
+    <label for="adv_correlation">复杂度相关性</label>
+    <div class="adv-slider-row"><span class="adv-minmax">-1</span><input type="range" id="adv_correlation" min="-1" max="1" step="0.01" value="0.7"><span class="adv-minmax">1</span><span class="adv-cur" id="adv_correlation_val">0.70</span></div>
+    <label for="adv_pi_val">π</label>
+    <input type="text" id="adv_pi_val" value="3.141592653589793">
+    <label for="adv_e_val">e</label>
+    <input type="text" id="adv_e_val" value="2.718281828459045">
+    <label for="adv_phi_val">φ</label>
+    <input type="text" id="adv_phi_val" value="1.618033988749895">
+    <div class="btn-row">
+      <button class="btn btn-secondary" id="btn_close_advanced">取消</button>
+      <button class="btn btn-primary" id="btn_save_advanced">保存</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay hidden" id="help_modal">
+  <div class="modal">
+    <h3>使用说明</h3>
+    <p class="note">这是一台立场编译器。设定四维公理，输入自然命题，AI 将议题按提示词解析为数学公式，网页脚本计算认可度。</p>
+    <p class="note"><strong>配置 API：</strong>右上角按钮进入。选择提供商和模型，填入 Key 方可使用。</p>
+    <p class="note note-warning" style="color: rgb(202, 68, 68);">出于安全考虑，本项目不会在本地或远程储存任何数据，关闭或刷新页面后任何配置信息将被清除，需要重新配置。</p>
+    <p class="note"><strong>四维公理设定：</strong>由 AI 提炼 `Swill/哲` 而成的四个经典对立——个体与集体、平等与阶层、自由意志与环境决定、保守与激进。四个滑块分别对应边界、序位、归因、时间四个维度，构成人类价值观念底层向量。</p>
+    <p class="note"><strong>自然语言命题：</strong>输入陈述句描述命题交由 AI 解析。命题越长、信息量越大，AI 自动使用更复杂的数学函数。</p>
+    <p class="note note-warning" style="color: rgb(0, 255, 0);">点击「高级」可调整复杂度阈值、相关性及数学常数。</p>
+    <p class="note"><strong>立场分析：</strong>解析命题后得出认可度（百分比）和置信度（百分比外的环形进度条），并给出 AI 返回的自然命题对应的数学公式及其置信度。脚本通过随机采样自动计算极端支持者与反对者的画像，点击画像数值可一键应用对应滑块值。图表区上方切换维度变量，右上角切换 2D/3D 视图，维度变更即时刷新。</p>
+    <div class="btn-row"><button class="btn btn-secondary" id="btn_close_help">关闭</button></div>
+  </div>
+</div>
+
+<button class="help-btn" id="btn_help">?</button>
+
+<script src="js/engine.js"></script>
+<script src="js/parser.js"></script>
+<script src="js/chart.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
