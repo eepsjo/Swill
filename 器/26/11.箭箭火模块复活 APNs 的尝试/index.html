@@ -763,18 +763,7 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        编辑参数
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="编辑参数">
+    <nav class="md-nav" aria-label="原文">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -838,7 +827,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         写在后面
@@ -3611,18 +3600,7 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        编辑参数
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="编辑参数">
+    <nav class="md-nav" aria-label="原文">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3686,7 +3664,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         写在后面
@@ -3714,7 +3692,7 @@
 
 
 <h1 id="apns">箭箭火模块复活 APNs 的尝试<a class="headerlink" href="#apns" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260526'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-05-26T12:00:00+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260731'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-07-31T09:01:46+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='<a href="https://getajobng.com/" target="_blank">Espejo</a>'><span class='avatar-text'></span><img class='avatar' data-src='https://avatars.githubusercontent.com/u/99065471' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='260526'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-05-26T12:00:00+08:00'></time></span><span class='dd-item' data-tippy-content data-tippy-raw='260731'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-07-31T09:05:30+08:00'></time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Espejo' data-tippy-content data-tippy-raw='<a href="https://getajobng.com/" target="_blank">Espejo</a>'><span class='avatar-text'></span><img class='avatar' data-src='https://avatars.githubusercontent.com/u/99065471' data-email='' /></div></div></div></div></div>
 
 <h2 id="_1">更新<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>给出一<a href="https://raw.githubusercontent.com/eepsjo/s/refs/heads/m/apns">模块</a>解决 <a href="../10.%E7%AE%AD%E7%AE%AD%E7%81%AB%20%2B%20%E6%8D%B7%E5%BE%91%EF%BC%9A%E6%8C%89%E5%BA%94%E7%94%A8%E5%88%86%E6%B5%81/#fn:4">APNs 的问题</a>。模块更新移除了一些不是很重要的参数，在下面的<a href="#_3">原文</a>一章中你可以找到老版和相关的参数意义。</p>
@@ -3728,7 +3706,7 @@
 <p>简单来说现在<strong>只保留了填写“用于接收 APNs 推送的节点”的参数</strong>，以及开关后面三类规则的参数。</p>
 <h3 id="_2">补充几句<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>笔者仍认为 APNs 问题是 Apple 的主动屏蔽（或者说被迫在东大“合规”）导致的，而 GFW 就算没有知道具体 APNs 推送的来源 APP 和信息内容的方法，其通过 DPI 等手段，甚至是直接与 Apple 沟通还是极有可能暴露我们使用海外 APP 的事实。</p>
-<p><strong>最佳实践是。除非你有这些被屏蔽 APP 的即时消息接收需求，否则不要使用模块，且在设置中直接关闭这些 APP 的消息推送。</strong></p>
+<p><strong>最佳实践是：除非你有这些被屏蔽 APP 的即时消息接收需求，否则不要使用模块，且在设置中直接关闭这些 APP 的消息推送。</strong></p>
 <p>此外不要为了消息及时接收去使用任何第三方 APP。</p>
 <h2 id="_3">原文<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>给出一模块解决 APNs 的问题：</p>
@@ -3772,7 +3750,6 @@
 <p>才能复活 APNs。Wi-Fi 不受影响（即不插卡的设备不需要）。</p>
 </li>
 </ol>
-<h2 id="_4">编辑参数<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="mode-url-test-fallback">mode &amp; url-test &amp; fallback<a class="headerlink" href="#mode-url-test-fallback" title="Permanent link">&para;</a></h3>
 <p><code>mode</code> 可选值有 <code>url-test</code> 和 <code>fallback</code>，需要手动填写完整键值，代表模块将以哪种模式代理 APNs 流量。缺省值 <code>fallback</code>。</p>
 <p><code>url-test</code> 中可填入一个或多个代理节点或分组的名称，每个节点或分组之间用英文逗号分隔。这些节点将进行 URL 测试，测试结果最好的节点将被用来代理 APNs。不填则使用缺省值 <code>PROXY</code>。建议填写一个或多个稳定、低延迟的节点。</p>
@@ -3797,7 +3774,7 @@
 <p>是否代理 APNs 的 IP 段。默认开启。</p>
 <p>参考了 <a href="https://support.apple.com/102266">Apple 的官方文档</a>，这里说明了 APNs 的 IP 段。</p>
 <p>按需配置完成后，可能需要编译一次正在使用的配置，和/或开关飞行模式一次（目的是彻底关闭再开启一次箭箭火隧道）。</p>
-<h2 id="_5">写在后面<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_4">写在后面<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p><del>笔者正在尝试能否在保证 APNs 直连的情况下欺骗 Apple 使其认为我们在境外，以此绕过屏蔽，同时享受直连接受消息的速度。</del></p>
 <p><del>在前文的测试中，注意到即使开启了睡眠时断开部分情况下仍能在熄屏后接收到消息，笔者推测箭箭火睡眠断开后 APNs 服务器并没有及时得知，仍认为我们在境外，在 iOS 主动检查 APNs 连接前我们处于 APNs 直连但不受屏蔽的状态：当 APNs 推送到代理节点时发现不通，APNs 自动回落到 iOS 在国内的真实 IP，绕过封锁。</del></p>
 <p><del>实际测试中，这种状态的 iOS 往往只能收到第一条消息，推测是建立连接后后续消息因为 APNs 直连被重新屏蔽了。</del></p>
