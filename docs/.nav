@@ -1,0 +1,8 @@
+nav:
+  - 器
+  - 哲
+  - 文
+  - 杂
+  - 录
+sort:
+  direction: desc
