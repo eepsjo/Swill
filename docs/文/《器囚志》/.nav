@@ -2,3 +2,5 @@ nav:
   - 弁言.md
   - 元
   - 又
+sort:
+  direction: asc
