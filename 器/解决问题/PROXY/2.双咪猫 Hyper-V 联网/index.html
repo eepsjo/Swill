@@ -55,17 +55,17 @@
     
       <link rel="stylesheet" href="../../../../assets/document_dates/fonts/material-icons.css">
     
-      <link rel="stylesheet" href="../../../../assets/document_dates/tippy/material.css">
+      <link rel="stylesheet" href="../../../../assets/document_dates/tippy/scale.css">
     
-      <link rel="stylesheet" href="../../../../assets/document_dates/tippy/light.css">
+      <link rel="stylesheet" href="../../../../assets/document_dates/tippy/tippy.css">
+    
+      <link rel="stylesheet" href="../../../../assets/document_dates/tippy/material.css">
     
       <link rel="stylesheet" href="../../../../assets/document_dates/tippy/backdrop.css">
     
-      <link rel="stylesheet" href="../../../../assets/document_dates/tippy/scale.css">
-    
       <link rel="stylesheet" href="../../../../assets/document_dates/tippy/shift-away.css">
     
-      <link rel="stylesheet" href="../../../../assets/document_dates/tippy/tippy.css">
+      <link rel="stylesheet" href="../../../../assets/document_dates/tippy/light.css">
     
       <link rel="stylesheet" href="../../../../assets/document_dates/core/core.css">
     
@@ -3004,6 +3004,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%96%87/%E3%80%8A%E5%99%A8%E5%9B%9A%E5%BF%97%E3%80%8B/%E5%85%83/5.%E7%81%AF%E5%99%AC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    燈噬
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -4569,7 +4597,7 @@
 </ol>
 <h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>宿主机配置（部分）：
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">authentication</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;【用户】:【密码】&quot;</span><span class="p p-Indicator">]</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">authentication</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"【用户】:【密码】"</span><span class="p p-Indicator">]</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">mixed-port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">【端口】</span>
 </span></code></pre></div></p>
 <p>虚拟机配置（部分）：</p>
@@ -4616,15 +4644,15 @@
 </blockquote>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c"># 动态获取网关并启动 mihomo</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nv">$gateway</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-NetRoute</span> <span class="n">-DestinationPrefix</span> <span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">/</span><span class="n">0</span><span class="p">).</span><span class="n">NextHop</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-First</span> <span class="n">1</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">(</span><span class="nb">Get-Content</span> <span class="n">config</span><span class="p">.</span><span class="n">yaml</span><span class="p">)</span> <span class="o">-replace</span> <span class="s1">&#39;server: .*&#39;</span><span class="p">,</span> <span class="s2">&quot;server: $gateway&quot;</span> <span class="p">|</span> <span class="nb">Set-Content</span> <span class="n">config</span><span class="p">.</span><span class="n">yaml</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">(</span><span class="nb">Get-Content</span> <span class="n">config</span><span class="p">.</span><span class="n">yaml</span><span class="p">)</span> <span class="o">-replace</span> <span class="s1">'server: .*'</span><span class="p">,</span> <span class="s2">"server: $gateway"</span> <span class="p">|</span> <span class="nb">Set-Content</span> <span class="n">config</span><span class="p">.</span><span class="n">yaml</span>
 </span></code></pre></div>
 <p>启动脚本：</p>
 <blockquote>
 <p>只是多了一行启动 ps1 然后判断<strong>真假？！</strong> 的逻辑。<br>vbs 必须用任务计划程序才能以管理员启动喔。</p>
 </blockquote>
-<div class="language-vbscript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">Set</span><span class="w"> </span><span class="n">shell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">CreateObject</span><span class="p">(</span><span class="s2">&quot;WScript.Shell&quot;</span><span class="p">)</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">shell</span><span class="p">.</span><span class="n">Run</span><span class="w"> </span><span class="s2">&quot;powershell.exe -ExecutionPolicy Bypass -File .\server.ps1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="no">True</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">shell</span><span class="p">.</span><span class="n">Run</span><span class="w"> </span><span class="s2">&quot;.\mihomo【的名字】.exe -d .\&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span>
+<div class="language-vbscript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">Set</span><span class="w"> </span><span class="n">shell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">CreateObject</span><span class="p">(</span><span class="s2">"WScript.Shell"</span><span class="p">)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">shell</span><span class="p">.</span><span class="n">Run</span><span class="w"> </span><span class="s2">"powershell.exe -ExecutionPolicy Bypass -File .\server.ps1"</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="no">True</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">shell</span><span class="p">.</span><span class="n">Run</span><span class="w"> </span><span class="s2">".\mihomo【的名字】.exe -d .\"</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span>
 </span></code></pre></div>
 
 
